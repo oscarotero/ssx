@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "ssx"
+  },
+  "lock": false,
+  "imports": {
+    "ssx/jsx-runtime": "./jsx-runtime.ts"
+  }
+}
