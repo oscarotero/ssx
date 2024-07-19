@@ -1,3 +1,5 @@
+import { JSX } from "./html.ts";
+
 interface RawHtml {
   __html?: string;
 }
@@ -7,9 +9,13 @@ export function jsx(type: string, props: Record<string, unknown>) {
 }
 
 export { jsx as jsxs };
+export { jsx as Fragment };
 
 /** jsx: precompile */
-export async function jsxTemplate(strings: string[], ...values: unknown[]) {
+export async function jsxTemplate(
+  strings: string[],
+  ...values: unknown[]
+): Promise<string> {
   let result = strings[0];
   for (let i = 0; i < values.length; i++) {
     const value = values[i];
@@ -75,3 +81,4 @@ export function jsxAttr(name: string, value: unknown): string {
 
   return `${name}="${value}"`;
 }
+export type { JSX };
