@@ -6,5 +6,8 @@
   "lock": false,
   "imports": {
     "ssx/jsx-runtime": "./jsx-runtime.ts"
+  },
+  "tasks": {
+    "test": "deno test --allow-read"
   }
 }

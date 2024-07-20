@@ -36,8 +36,8 @@ for (const attr of data.globalAttributes) {
 
 const intrinsicElements: Inter = {
   export: true,
-  name: "IntrinsicElements",
-  description: "All HTML tags",
+  name: "HTMLElements",
+  description: "All HTML elements",
   properties: [],
 };
 
@@ -90,7 +90,7 @@ globalAttributes.properties.push({
 intrinsicElements.properties.push({
   name: "[key: string]",
   description: "Custom element",
-  value: "GlobalAttributes | undefined",
+  value: "unknown",
 });
 
 function toTitleCase(str: string) {
@@ -167,11 +167,4 @@ const code = [
   ...tags.map(renderInterface),
 ];
 
-Deno.writeTextFileSync(
-  "html.ts",
-  `// deno-lint-ignore no-namespace
-export namespace JSX {
-${code.join("\n\n")}
-}
-`,
-);
+Deno.writeTextFileSync("html.ts", code.join("\n\n"));

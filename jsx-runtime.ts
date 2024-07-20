@@ -1,15 +1,21 @@
-import { JSX } from "./html.ts";
+import { HTMLElements } from "./html.ts";
 
 interface RawHtml {
   __html?: string;
 }
 
-export function jsx(type: string, props: Record<string, unknown>) {
+export function jsx(
+  type: string,
+  props: Record<string, unknown>,
+) {
   return [type, props];
 }
 
 export { jsx as jsxs };
-export { jsx as Fragment };
+
+export function Fragment(props: { children: unknown }) {
+  return props.children;
+}
 
 /** jsx: precompile */
 export async function jsxTemplate(
@@ -35,10 +41,23 @@ export async function jsxTemplate(
   return result;
 }
 
-export function jsxEscape(content: unknown): string {
+type Content =
+  | string
+  | number
+  | boolean
+  | RawHtml
+  | (() => Content)
+  | Content[];
+
+export function jsxEscape(content: Content): string {
   if (typeof content === "function") {
     return jsxEscape(content());
   }
+
+  if (Array.isArray(content)) {
+    return content.map(jsxEscape).join("");
+  }
+
   if (content == null || content === undefined) {
     return "";
   }
@@ -59,10 +78,6 @@ export function jsxEscape(content: unknown): string {
       return content.toString();
   }
 
-  if (typeof content === "number" || typeof content === "boolean") {
-    return content.toString();
-  }
-
   return "";
 }
 
@@ -81,4 +96,19 @@ export function jsxAttr(name: string, value: unknown): string {
 
   return `${name}="${value}"`;
 }
-export type { JSX };
+
+declare global {
+  export namespace JSX {
+    export type Children =
+      | HTMLElements
+      | RawHtml
+      | string
+      | number
+      | boolean
+      | Children[];
+    export interface IntrinsicElements extends HTMLElements {}
+    export interface ElementChildrenAttribute {
+      children: Children;
+    }
+  }
+}
