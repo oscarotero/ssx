@@ -1,0 +1,24 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v1
+
+      - name: Verify formatting
+        run: deno fmt --check
+
+      - name: Run linter
+        run: deno lint
+
+      - name: Run tests
+        run: deno task test
