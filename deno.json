@@ -9,5 +9,8 @@
   },
   "tasks": {
     "test": "deno test --allow-read"
-  }
+  },
+  "exclude": [
+    "CHANGELOG.md"
+  ]
 }
