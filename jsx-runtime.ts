@@ -1,9 +1,11 @@
 import { HTMLElements } from "./html.ts";
 
+/** The interface to output unescaped raw HTML */
 interface RawHtml {
   __html?: string;
 }
 
+/** The jsx function to create elements */
 export function jsx(
   type: string,
   props: Record<string, unknown>,
@@ -11,13 +13,15 @@ export function jsx(
   return [type, props];
 }
 
+/** Alias jsxs to jsx for compatibility with automatic runtime */
 export { jsx as jsxs };
 
+/** Fragment component to group multiple elements */
 export function Fragment(props: { children: unknown }) {
   return props.children;
 }
 
-/** jsx: precompile */
+/** Required for "precompile" mode */
 export async function jsxTemplate(
   strings: string[],
   ...values: unknown[]
@@ -49,6 +53,7 @@ type Content =
   | (() => Content)
   | Content[];
 
+/** Required for "precompile" mode: render content */
 export function jsxEscape(content: Content): string {
   if (typeof content === "function") {
     return jsxEscape(content());
@@ -81,6 +86,7 @@ export function jsxEscape(content: Content): string {
   return "";
 }
 
+/** Required for "precompile" mode: render attributes */
 export function jsxAttr(name: string, value: unknown): string {
   if (typeof value === "string") {
     return `${name}="${value.replace(/"/g, "&quot;")}"`;
@@ -97,6 +103,7 @@ export function jsxAttr(name: string, value: unknown): string {
   return `${name}="${value}"`;
 }
 
+/** Make JSX global */
 declare global {
   export namespace JSX {
     export type Children =

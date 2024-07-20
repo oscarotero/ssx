@@ -1,7 +1,7 @@
 # SSX
 
 JSX is terrible for frontend. But it's an acceptable way to create HTML code in
-server side, specially if it's supported by default in TypeScript and Deno.
+server side, specially if it's supported by default by TypeScript and Deno.
 
 Most of the current JSX libraries are designed to work in server and client
 sides. They do complicated things like a virtual DOM, reactivity, hooks,
