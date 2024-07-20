@@ -35,7 +35,7 @@ In your `deno.json` file:
     "jsxImportSource": "ssx"
   },
   "imports": {
-    "ssx/jsx-runtime": "./jsx-runtime.ts"
+    "ssx/jsx-runtime": "https://deno.land/x/ssx/jsx-runtime.ts"
   }
 }
 ```
