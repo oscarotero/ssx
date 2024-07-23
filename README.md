@@ -23,6 +23,7 @@ plain HTML code.
   [VSCode Custom Data](https://github.com/microsoft/vscode-custom-data).
 - It supports async components (components returning a Promise).
 - Allows to insert raw HTML code easily (without patronizing you).
+- You can add the `<!doctype html>` declaration.
 
 ## Configuration
 
@@ -80,7 +81,7 @@ console.log(await main());
 
 Any children content with the type `{ __html: string }` is considered raw HTML
 code that won't be escaped. You can use it to add the `<!doctype html>`
-(something not possible in other JSX libraries):
+declaration (something not possible in other JSX libraries):
 
 ```jsx
 {
