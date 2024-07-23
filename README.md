@@ -44,14 +44,16 @@ In your `deno.json` file:
 ## Example:
 
 ```jsx
-function Main () {
+// Main component
+function Main() {
   return (
-    <html>
+    <html lang="en">
       <body>
         <custom-element />
         <p>Example:</p>
         <Header name="World">
           Welcome to SSX
+          <br />
           {{ __html: "Raw <b>HTML</b> code" }}
         </Header>
       </body>
@@ -60,21 +62,30 @@ function Main () {
 }
 
 // Async component
-async function Header({ name, children }: { name: string; children: JSX.Children }) {
-  const res = await fetch("https://weather.com/");
+async function Header(
+  { name, children }: { name: string; children: JSX.Children },
+) {
+  const res = await fetch(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${name}`,
+  );
   const json = await res.json();
 
   return (
     <>
       <h1>Hello {name}</h1>
-      <p>Today is { json.status }</p>
-      { children }
+      <h2>Os: {Deno.build.os}</h2>
+      <p>
+        Definition of {name}:{" "}
+        {json[0]?.meanings[0]?.definitions[0]?.definition ||
+          "Definition not found"}
+      </p>
+      {children}
     </>
   );
 }
 
 // String with the HTML code
-console.log(await main());
+console.log(await Main());
 ```
 
 ### Adding Doctype:
