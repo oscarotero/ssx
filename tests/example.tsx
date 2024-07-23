@@ -1,24 +1,27 @@
 export default function Main() {
   return (
-    <html>
-      <body>
-        <custom-element />
-        <p class={"foo" + 1}>Example:</p>
-        <br />
-        <Header name="World">
-          Welcome to SSX
-          {{ __html: "Raw <b>HTML</b> code" }}
-        </Header>
-        <p
-          class="foo"
-          dangerouslySetInnerHTML={{ __html: "<span>Raw content</span>" }}
-        />
-        <MyDiv>
-          <Header name="World">Welcome to SSX</Header>
-          {{ __html: "Raw <b>HTML</b> code" }}
-        </MyDiv>
-      </body>
-    </html>
+    <>
+      {{ __html: "<!doctype html>" }}
+      <html>
+        <body>
+          <custom-element />
+          <p class={"foo" + 1}>Example:</p>
+          <br />
+          <Header name="World">
+            Welcome to SSX
+            {{ __html: "Raw <b>HTML</b> code" }}
+          </Header>
+          <p
+            class="foo"
+            dangerouslySetInnerHTML={{ __html: "<span>Raw content</span>" }}
+          />
+          <MyDiv>
+            <Header name="World">Welcome to SSX</Header>
+            {{ __html: "Raw <b>HTML</b> code" }}
+          </MyDiv>
+        </body>
+      </html>
+    </>
   );
 }
 

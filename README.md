@@ -75,3 +75,20 @@ async function Header({ name, children }: { name: string; children: JSX.Children
 // String with the HTML code
 console.log(await main());
 ```
+
+### Adding Doctype:
+
+Any children content with the type `{ __html: string }` is considered raw HTML
+code that won't be escaped. You can use it to add the `<!doctype html>`
+(something not possible in other JSX libraries):
+
+```jsx
+{
+  {
+    __html: "<!doctype html>";
+  }
+}
+<html>
+  ...
+</html>;
+```
