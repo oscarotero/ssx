@@ -3,12 +3,20 @@ export default function Main() {
     <html>
       <body>
         <custom-element />
-        <p>Example:</p>
+        <p class={"foo" + 1}>Example:</p>
         <br />
         <Header name="World">
           Welcome to SSX
           {{ __html: "Raw <b>HTML</b> code" }}
         </Header>
+        <p
+          class="foo"
+          dangerouslySetInnerHTML={{ __html: "<span>Raw content</span>" }}
+        />
+        <MyDiv>
+          <Header name="World">Welcome to SSX</Header>
+          {{ __html: "Raw <b>HTML</b> code" }}
+        </MyDiv>
       </body>
     </html>
   );
@@ -25,5 +33,14 @@ async function Header(
       <h1>Hello {name}</h1>
       {children}
     </>
+  );
+}
+
+// Other component
+function MyDiv(props: { children: JSX.Children }) {
+  return (
+    <div>
+      {props.children}
+    </div>
   );
 }

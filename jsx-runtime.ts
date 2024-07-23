@@ -1,16 +1,31 @@
 import { HTMLElements } from "./html.ts";
 
-/** The interface to output unescaped raw HTML */
 interface RawHtml {
   __html?: string;
+}
+
+type Props = Record<string, unknown>;
+
+type Content =
+  | string
+  | number
+  | boolean
+  | RawHtml
+  | ((...args: unknown[]) => Content)
+  | Content[];
+
+interface Component {
+  // deno-lint-ignore no-explicit-any
+  type: string | ((props: Props) => any);
+  props: Props;
 }
 
 /** The jsx function to create elements */
 export function jsx(
   type: string,
-  props: Record<string, unknown>,
-) {
-  return [type, props];
+  props: Props,
+): Component {
+  return { type, props };
 }
 
 /** Alias jsxs to jsx for compatibility with automatic runtime */
@@ -30,37 +45,23 @@ export async function jsxTemplate(
   for (let i = 0; i < values.length; i++) {
     const value = values[i];
 
-    if (Array.isArray(value)) {
-      const r = value[0](value[1]);
-      if (typeof r === "string") {
-        result += r;
-      } else {
-        result += await r;
-      }
-    } else {
+    if (typeof value === "string") {
       result += value;
+    } else if (isComponent(value)) {
+      result += await renderComponent(value);
+    } else {
+      result += await value;
     }
+
     result += strings[i + 1];
   }
   return result;
 }
 
-type Content =
-  | string
-  | number
-  | boolean
-  | RawHtml
-  | (() => Content)
-  | Content[];
-
 /** Required for "precompile" mode: render content */
-export function jsxEscape(content: Content): string {
-  if (typeof content === "function") {
-    return jsxEscape(content());
-  }
-
+export async function jsxEscape(content: Content): Promise<string> {
   if (Array.isArray(content)) {
-    return content.map(jsxEscape).join("");
+    return (await Promise.all(content.map(jsxEscape))).join("");
   }
 
   if (content == null || content === undefined) {
@@ -77,13 +78,46 @@ export function jsxEscape(content: Content): string {
       if ("__html" in content) {
         return (content as RawHtml).__html ?? "";
       }
+      if (isComponent(content)) {
+        return await renderComponent(content);
+      }
       break;
     case "number":
     case "boolean":
       return content.toString();
   }
 
-  return "";
+  return content as Promise<string>;
+}
+
+function isComponent(value: unknown): value is Component {
+  return value !== null && typeof value === "object" && "type" in value &&
+    "props" in value;
+}
+
+async function renderComponent(component: Component): Promise<string> {
+  const { type, props } = component;
+
+  // An HTML tag
+  if (typeof type === "string") {
+    const attrs: string[] = [type];
+    let content = "";
+
+    if (props) {
+      for (
+        const [key, val] of Object.entries(props)
+      ) {
+        if (key === "dangerouslySetInnerHTML") {
+          content = (val as RawHtml).__html ?? "";
+          continue;
+        }
+        attrs.push(jsxAttr(key, val));
+      }
+    }
+    return `<${attrs.join(" ")}>${content}</${type}>`;
+  }
+
+  return await type(props);
 }
 
 /** Required for "precompile" mode: render attributes */
