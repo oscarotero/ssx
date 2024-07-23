@@ -83,12 +83,8 @@ Any children content with the type `{ __html: string }` is considered raw HTML
 code that won't be escaped. You can use it to add the `<!doctype html>`
 declaration (something not possible in other JSX libraries):
 
-```jsx
-{
-  {
-    __html: "<!doctype html>";
-  }
-}
+```html
+{{ __html: "<!doctype html>" }}
 <html>
   ...
 </html>;
