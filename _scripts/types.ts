@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 const res = await fetch(
-  "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@0.4.11/data/browsers.html-data.json",
+  "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@0.4.12/data/browsers.html-data.json",
 );
 const data = await res.json();
 

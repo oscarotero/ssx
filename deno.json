@@ -8,7 +8,8 @@
     "ssx/jsx-runtime": "./jsx-runtime.ts"
   },
   "tasks": {
-    "test": "deno test --allow-read"
+    "test": "deno test --allow-read",
+    "build-types": "deno run -A _scripts/types.ts && deno fmt html.ts"
   },
   "exclude": [
     "CHANGELOG.md"
