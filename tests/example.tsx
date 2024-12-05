@@ -13,6 +13,7 @@ export default function Main() {
           </Header>
           <p
             class="foo"
+            tabindex={2}
             dangerouslySetInnerHTML={{ __html: "<span>Raw content</span>" }}
           />
           <MyDiv>

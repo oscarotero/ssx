@@ -904,7 +904,7 @@ interface GlobalAttributes {
    * Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value. A hint could be a sample value or a brief description of the expected format.
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-placeholder)
    */
-  "aria-placeholder"?: string;
+  "aria-placeholder"?: number | string;
 
   /**
    * Defines an [element](https://www.w3.org/TR/wai-aria-1.1/#dfn-element)'s number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. See related [`aria-setsize`](https://www.w3.org/TR/wai-aria-1.1/#aria-setsize).
@@ -951,19 +951,19 @@ interface GlobalAttributes {
    * Defines the total number of rows in a [`table`](https://www.w3.org/TR/wai-aria-1.1/#table), [`grid`](https://www.w3.org/TR/wai-aria-1.1/#grid), or [`treegrid`](https://www.w3.org/TR/wai-aria-1.1/#treegrid). See related [`aria-rowindex`](https://www.w3.org/TR/wai-aria-1.1/#aria-rowindex).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-rowcount)
    */
-  "aria-rowcount"?: string;
+  "aria-rowcount"?: number | string;
 
   /**
    * Defines an [element's](https://www.w3.org/TR/wai-aria-1.1/#dfn-element) row index or position with respect to the total number of rows within a [`table`](https://www.w3.org/TR/wai-aria-1.1/#table), [`grid`](https://www.w3.org/TR/wai-aria-1.1/#grid), or [`treegrid`](https://www.w3.org/TR/wai-aria-1.1/#treegrid). See related [`aria-rowcount`](https://www.w3.org/TR/wai-aria-1.1/#aria-rowcount) and [`aria-rowspan`](https://www.w3.org/TR/wai-aria-1.1/#aria-rowspan).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-rowindex)
    */
-  "aria-rowindex"?: string;
+  "aria-rowindex"?: number | string;
 
   /**
    * Defines the number of rows spanned by a cell or gridcell within a [`table`](https://www.w3.org/TR/wai-aria-1.1/#table), [`grid`](https://www.w3.org/TR/wai-aria-1.1/#grid), or [`treegrid`](https://www.w3.org/TR/wai-aria-1.1/#treegrid). See related [`aria-rowindex`](https://www.w3.org/TR/wai-aria-1.1/#aria-rowindex) and [`aria-colspan`](https://www.w3.org/TR/wai-aria-1.1/#aria-colspan).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-rowspan)
    */
-  "aria-rowspan"?: string;
+  "aria-rowspan"?: number | string;
 
   /**
    * Indicates the current "selected" [state](https://www.w3.org/TR/wai-aria-1.1/#dfn-state) of various [widgets](https://www.w3.org/TR/wai-aria-1.1/#dfn-widget). See related [`aria-checked`](https://www.w3.org/TR/wai-aria-1.1/#aria-checked) and [`aria-pressed`](https://www.w3.org/TR/wai-aria-1.1/#aria-pressed).
@@ -975,7 +975,7 @@ interface GlobalAttributes {
    * Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. See related [`aria-posinset`](https://www.w3.org/TR/wai-aria-1.1/#aria-posinset).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-setsize)
    */
-  "aria-setsize"?: string;
+  "aria-setsize"?: number | string;
 
   /**
    * Indicates if items in a table or grid are sorted in ascending or descending order.
@@ -987,19 +987,19 @@ interface GlobalAttributes {
    * Defines the maximum allowed value for a range [widget](https://www.w3.org/TR/wai-aria-1.1/#dfn-widget).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax)
    */
-  "aria-valuemax"?: string;
+  "aria-valuemax"?: number | string;
 
   /**
    * Defines the minimum allowed value for a range [widget](https://www.w3.org/TR/wai-aria-1.1/#dfn-widget).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin)
    */
-  "aria-valuemin"?: string;
+  "aria-valuemin"?: number | string;
 
   /**
    * Defines the current value for a range [widget](https://www.w3.org/TR/wai-aria-1.1/#dfn-widget). See related [`aria-valuetext`](https://www.w3.org/TR/wai-aria-1.1/#aria-valuetext).
    * @see [WAI-ARIA Reference](https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow)
    */
-  "aria-valuenow"?: string;
+  "aria-valuenow"?: number | string;
 
   /**
    * Defines the human readable text alternative of [`aria-valuenow`](https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow) for a range [widget](https://www.w3.org/TR/wai-aria-1.1/#dfn-widget).
@@ -1605,7 +1605,7 @@ interface GlobalAttributes {
    * *   a _positive value_ means that the element should be focusable and reachable via sequential keyboard navigation; the order in which the elements are focused is the increasing value of the [**tabindex**](#attr-tabindex). If several elements share the same tabindex, their relative order follows their relative positions in the document.
    * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex)
    */
-  tabindex?: string;
+  tabindex?: number | string;
 
   /**
    * Contains a text representing advisory information related to the element it belongs to. Such information can typically, but not necessarily, be presented to the user as a tooltip.
@@ -2106,15 +2106,15 @@ interface Hr extends GlobalAttributes {
 
   noshade?: string;
 
-  size?: string;
+  size?: number | string;
 
-  width?: string;
+  width?: number | string;
 }
 
 interface Pre extends GlobalAttributes {
-  cols?: string;
+  cols?: number | string;
 
-  width?: string;
+  width?: number | string;
 
   wrap?: string;
 }
@@ -2173,7 +2173,7 @@ interface Li extends GlobalAttributes {
    *
    * **Note:** Prior to Gecko 9.0, negative values were incorrectly converted to 0. Starting in Gecko 9.0 all integer values are correctly parsed.
    */
-  value?: string;
+  value?: number | string;
 }
 
 interface Dd extends GlobalAttributes {
@@ -2317,7 +2317,7 @@ interface Img extends GlobalAttributes {
   /**
    * The intrinsic height of the image in pixels.
    */
-  height?: string;
+  height?: number | string;
 
   /**
    * undefined
@@ -2399,7 +2399,7 @@ interface Img extends GlobalAttributes {
   /**
    * The intrinsic width of the image in pixels.
    */
-  width?: string;
+  width?: number | string;
 }
 
 interface Iframe extends GlobalAttributes {
@@ -2422,7 +2422,7 @@ interface Iframe extends GlobalAttributes {
   /**
    * The height of the frame in CSS pixels. Default is `150`.
    */
-  height?: string;
+  height?: number | string;
 
   importance?: string;
 
@@ -2480,14 +2480,14 @@ interface Iframe extends GlobalAttributes {
   /**
    * The width of the frame in CSS pixels. Default is `300`.
    */
-  width?: string;
+  width?: number | string;
 }
 
 interface Embed extends GlobalAttributes {
   /**
    * The displayed height of the resource, in [CSS pixels](https://drafts.csswg.org/css-values/#px). This must be an absolute value; percentages are _not_ allowed.
    */
-  height?: string;
+  height?: number | string;
 
   /**
    * The URL of the resource being embedded.
@@ -2502,7 +2502,7 @@ interface Embed extends GlobalAttributes {
   /**
    * The displayed width of the resource, in [CSS pixels](https://drafts.csswg.org/css-values/#px). This must be an absolute value; percentages are _not_ allowed.
    */
-  width?: string;
+  width?: number | string;
 }
 
 interface Object extends GlobalAttributes {
@@ -2531,7 +2531,7 @@ interface Object extends GlobalAttributes {
   /**
    * The height of the displayed resource, in [CSS pixels](https://drafts.csswg.org/css-values/#px). -- (Absolute values only. [NO percentages](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes))
    */
-  height?: string;
+  height?: number | string;
 
   /**
    * The name of valid browsing context (HTML5), or the name of the control (HTML 4).
@@ -2558,7 +2558,7 @@ interface Object extends GlobalAttributes {
   /**
    * The width of the display resource, in [CSS pixels](https://drafts.csswg.org/css-values/#px). -- (Absolute values only. [NO percentages](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes))
    */
-  width?: string;
+  width?: number | string;
 }
 
 interface Param extends GlobalAttributes {
@@ -2572,7 +2572,7 @@ interface Param extends GlobalAttributes {
   /**
    * Specifies the value of the parameter.
    */
-  value?: string;
+  value?: number | string;
 
   valuetype?: string;
 }
@@ -2592,7 +2592,7 @@ interface Video extends GlobalAttributes {
 
   crossorigin?: "anonymous" | "use-credentials";
 
-  height?: string;
+  height?: number | string;
 
   loop?: boolean;
 
@@ -2606,7 +2606,7 @@ interface Video extends GlobalAttributes {
 
   src?: string;
 
-  width?: string;
+  width?: number | string;
 }
 
 interface Audio extends GlobalAttributes {
@@ -2719,7 +2719,7 @@ interface Track extends GlobalAttributes {
   /**
    * A user-readable title of the text track which is used by the browser when listing available text tracks.
    */
-  label?: string;
+  label?: number | string;
 
   /**
    * Address of the track (`.vtt` file). Must be a valid URL. This attribute must be specified and its URL value must have the same origin as the document — unless the [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio "The HTML <audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the <source> element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.") or [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video "The HTML Video element (<video>) embeds a media player which supports video playback into the document.") parent element of the `track` element has a [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute.
@@ -2774,13 +2774,13 @@ interface Caption extends GlobalAttributes {
 interface Colgroup extends GlobalAttributes {
   align?: string;
 
-  span?: string;
+  span?: number | string;
 }
 
 interface Col extends GlobalAttributes {
   align?: string;
 
-  span?: string;
+  span?: number | string;
 }
 
 interface Tbody extends GlobalAttributes {
@@ -2808,11 +2808,11 @@ interface Td extends GlobalAttributes {
 
   bgcolor?: string;
 
-  colspan?: string;
+  colspan?: number | string;
 
   headers?: string;
 
-  rowspan?: string;
+  rowspan?: number | string;
 }
 
 interface Th extends GlobalAttributes {
@@ -2827,11 +2827,11 @@ interface Th extends GlobalAttributes {
 
   bgcolor?: string;
 
-  colspan?: string;
+  colspan?: number | string;
 
   headers?: string;
 
-  rowspan?: string;
+  rowspan?: number | string;
 
   scope?: "row" | "col" | "rowgroup" | "colgroup";
 
@@ -3018,17 +3018,17 @@ interface Input extends GlobalAttributes {
 
   formtarget?: string;
 
-  height?: string;
+  height?: number | string;
 
   list?: string;
 
-  max?: string;
+  max?: number | string;
 
-  maxlength?: string;
+  maxlength?: number | string;
 
-  min?: string;
+  min?: number | string;
 
-  minlength?: string;
+  minlength?: number | string;
 
   multiple?: boolean;
 
@@ -3036,17 +3036,17 @@ interface Input extends GlobalAttributes {
 
   pattern?: string;
 
-  placeholder?: string;
+  placeholder?: number | string;
 
   readonly?: boolean;
 
   required?: boolean;
 
-  size?: string;
+  size?: number | string;
 
   src?: string;
 
-  step?: string;
+  step?: number | string;
 
   type?:
     | "hidden"
@@ -3073,9 +3073,9 @@ interface Input extends GlobalAttributes {
     | "reset"
     | "button";
 
-  value?: string;
+  value?: number | string;
 
-  width?: string;
+  width?: number | string;
 }
 
 interface Button extends GlobalAttributes {
@@ -3159,7 +3159,7 @@ interface Button extends GlobalAttributes {
   /**
    * The initial value of the button. It defines the value associated with the button which is submitted with the form data. This value is passed to the server in params when the form is submitted.
    */
-  value?: string;
+  value?: number | string;
 }
 
 interface Select extends GlobalAttributes {
@@ -3265,7 +3265,7 @@ interface Select extends GlobalAttributes {
    *
    * **Note:** According to the HTML5 specification, the default value for size should be 1; however, in practice, this has been found to break some web sites, and no other browser currently does that, so Mozilla has opted to continue to return 0 for the time being with Firefox.
    */
-  size?: string;
+  size?: number | string;
 }
 
 interface Optgroup extends GlobalAttributes {
@@ -3277,7 +3277,7 @@ interface Optgroup extends GlobalAttributes {
   /**
    * The name of the group of options, which the browser can use when labeling the options in the user interface. This attribute is mandatory if this element is used.
    */
-  label?: string;
+  label?: number | string;
 }
 
 interface Option extends GlobalAttributes {
@@ -3289,7 +3289,7 @@ interface Option extends GlobalAttributes {
   /**
    * This attribute is text for the label indicating the meaning of the option. If the `label` attribute isn't defined, its value is that of the element text content.
    */
-  label?: string;
+  label?: number | string;
 
   /**
    * If present, this Boolean attribute indicates that the option is initially selected. If the `<option>` element is the descendant of a [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select "The HTML <select> element represents a control that provides a menu of options") element whose [`multiple`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-multiple) attribute is not set, only one single `<option>` of this [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select "The HTML <select> element represents a control that provides a menu of options") element may have the `selected` attribute.
@@ -3299,7 +3299,7 @@ interface Option extends GlobalAttributes {
   /**
    * The content of this attribute represents the value to be submitted with the form, should this option be selected. If this attribute is omitted, the value is taken from the text content of the option element.
    */
-  value?: string;
+  value?: number | string;
 }
 
 interface Textarea extends GlobalAttributes {
@@ -3383,7 +3383,7 @@ interface Textarea extends GlobalAttributes {
   /**
    * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer. If it is not specified, the default value is `20`.
    */
-  cols?: string;
+  cols?: number | string;
 
   dirname?: string;
 
@@ -3400,12 +3400,12 @@ interface Textarea extends GlobalAttributes {
   /**
    * The maximum number of characters (unicode code points) that the user can enter. If this value isn't specified, the user can enter an unlimited number of characters.
    */
-  maxlength?: string;
+  maxlength?: number | string;
 
   /**
    * The minimum number of characters (unicode code points) required that the user should enter.
    */
-  minlength?: string;
+  minlength?: number | string;
 
   /**
    * The name of the control.
@@ -3417,7 +3417,7 @@ interface Textarea extends GlobalAttributes {
    *
    * **Note:** Placeholders should only be used to show an example of the type of data that should be entered into a form; they are _not_ a substitute for a proper [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label "The HTML <label> element represents a caption for an item in a user interface.") element tied to the input. See [Labels and placeholders](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Labels_and_placeholders "The HTML <input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent.") in [<input>: The Input (Form Input) element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input "The HTML <input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent.") for a full explanation.
    */
-  placeholder?: string;
+  placeholder?: number | string;
 
   /**
    * This Boolean attribute indicates that the user cannot modify the value of the control. Unlike the `disabled` attribute, the `readonly` attribute does not prevent the user from clicking or selecting in the control. The value of a read-only control is still submitted with the form.
@@ -3432,7 +3432,7 @@ interface Textarea extends GlobalAttributes {
   /**
    * The number of visible text lines for the control.
    */
-  rows?: string;
+  rows?: number | string;
 
   /**
    * Indicates how the control wraps text. Possible values are:
@@ -3467,12 +3467,12 @@ interface Progress extends GlobalAttributes {
   /**
    * This attribute describes how much work the task indicated by the `progress` element requires. The `max` attribute, if present, must have a value greater than zero and be a valid floating point number. The default value is 1.
    */
-  max?: string;
+  max?: number | string;
 
   /**
    * This attribute specifies how much of the task that has been completed. It must be a valid floating point number between 0 and `max`, or between 0 and 1 if `max` is omitted. If there is no `value` attribute, the progress bar is indeterminate; this indicates that an activity is ongoing with no indication of how long it is expected to take.
    */
-  value?: string;
+  value?: number | string;
 }
 
 interface Meter extends GlobalAttributes {
@@ -3481,34 +3481,34 @@ interface Meter extends GlobalAttributes {
   /**
    * The lower numeric bound of the high end of the measured range. This must be less than the maximum value (`max` attribute), and it also must be greater than the low value and minimum value (`low` attribute and **min** attribute, respectively), if any are specified. If unspecified, or if greater than the maximum value, the `high` value is equal to the maximum value.
    */
-  high?: string;
+  high?: number | string;
 
   /**
    * The upper numeric bound of the low end of the measured range. This must be greater than the minimum value (`min` attribute), and it also must be less than the high value and maximum value (`high` attribute and `max` attribute, respectively), if any are specified. If unspecified, or if less than the minimum value, the `low` value is equal to the minimum value.
    */
-  low?: string;
+  low?: number | string;
 
   /**
    * The upper numeric bound of the measured range. This must be greater than the minimum value (`min` attribute), if specified. If unspecified, the maximum value is 1.
    */
-  max?: string;
+  max?: number | string;
 
   /**
    * The lower numeric bound of the measured range. This must be less than the maximum value (`max` attribute), if specified. If unspecified, the minimum value is 0.
    */
-  min?: string;
+  min?: number | string;
 
   /**
    * This attribute indicates the optimal numeric value. It must be within the range (as defined by the `min` attribute and `max` attribute). When used with the `low` attribute and `high` attribute, it gives an indication where along the range is considered preferable. For example, if it is between the `min` attribute and the `low` attribute, then the lower range is considered preferred.
    */
-  optimum?: string;
+  optimum?: number | string;
 
   /**
    * The current numeric value. This must be between the minimum and maximum values (`min` attribute and `max` attribute) if they are specified. If unspecified or malformed, the value is 0. If specified, but not within the range given by the `min` attribute and `max` attribute, the value is equal to the nearest end of the range.
    *
    * **Usage note:** Unless the `value` attribute is between `0` and `1` (inclusive), the `min` and `max` attributes should define the range so that the `value` attribute's value is within it.
    */
-  value?: string;
+  value?: number | string;
 }
 
 interface Fieldset extends GlobalAttributes {
@@ -3609,14 +3609,14 @@ interface Canvas extends GlobalAttributes {
   /**
    * The height of the coordinate space in CSS pixels. Defaults to 150.
    */
-  height?: string;
+  height?: number | string;
 
   "moz-opaque"?: string;
 
   /**
    * The width of the coordinate space in CSS pixels. Defaults to 300.
    */
-  width?: string;
+  width?: number | string;
 }
 
 interface Slot extends GlobalAttributes {
@@ -3631,5 +3631,5 @@ interface Data extends GlobalAttributes {
   /**
    * This attribute specifies the machine-readable translation of the content of the element.
    */
-  value?: string;
+  value?: number | string;
 }

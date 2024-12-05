@@ -95,7 +95,7 @@ code that won't be escaped. You can use it to add the `<!doctype html>`
 declaration (something not possible in other JSX libraries):
 
 ```html
-{{ __html: "<!doctype html>" }}
+{{ __html: "<!DOCTYPE html>" }}
 <html>
   ...
 </html>;

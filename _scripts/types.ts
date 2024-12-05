@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 const res = await fetch(
-  "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@0.4.12/data/browsers.html-data.json",
+  "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@latest/data/browsers.html-data.json",
 );
 const data = await res.json();
 
@@ -12,6 +12,37 @@ interface Inter {
   references?: string[];
   export?: boolean;
 }
+
+const numericAttrs = [
+  "colspan",
+  "rowspan",
+  "size",
+  "span",
+  "width",
+  "height",
+  "value",
+  "min",
+  "max",
+  "maxlength",
+  "minlength",
+  "step",
+  "rows",
+  "cols",
+  "tabindex",
+  "high",
+  "low",
+  "optimum",
+  "placeholder",
+  "aria-placeholder",
+  "label",
+  "aria-rowcount",
+  "aria-rowindex",
+  "aria-rowspan",
+  "aria-setsize",
+  "aria-valuemax",
+  "aria-valuemin",
+  "aria-valuenow",
+];
 
 interface Props {
   name: string;
@@ -108,6 +139,9 @@ function createProperty(attr: any): Props {
       );
       value = valueSet.values.map((v: any) => `"${v.name}"`).join(" | ");
     }
+  }
+  if (numericAttrs.includes(attr.name) && value === "string") {
+    value = "number | string";
   }
   return {
     name: attr.name,
