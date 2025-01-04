@@ -20,6 +20,23 @@ interface Component {
   props: Props;
 }
 
+const voidElements = new Set([
+  "area",
+  "base",
+  "br",
+  "col",
+  "embed",
+  "hr",
+  "img",
+  "input",
+  "link",
+  "meta",
+  "param",
+  "source",
+  "track",
+  "wbr",
+]);
+
 /** The jsx function to create elements */
 export function jsx(
   type: string,
@@ -95,11 +112,17 @@ function isComponent(value: unknown): value is Component {
     "props" in value;
 }
 
-async function renderComponent(component: Component): Promise<string> {
+export async function renderComponent(component: Component): Promise<string> {
   const { type, props } = component;
+
+  // A Fragment
+  if (type === Fragment) {
+    return await jsxEscape(props.children as Content);
+  }
 
   // An HTML tag
   if (typeof type === "string") {
+    const isVoid = voidElements.has(type);
     const attrs: string[] = [type];
     let content = "";
 
@@ -111,13 +134,26 @@ async function renderComponent(component: Component): Promise<string> {
           content = (val as RawHtml).__html ?? "";
           continue;
         }
+        if (key === "children") {
+          content = await jsxEscape(val as Content);
+          continue;
+        }
         attrs.push(jsxAttr(key, val));
       }
     }
+    if (isVoid) {
+      if (content) {
+        throw new Error(`Void element "${type}" cannot have children`);
+      }
+      return `<${attrs.join(" ")}>`;
+    }
+
     return `<${attrs.join(" ")}>${content}</${type}>`;
   }
 
-  return await type(props);
+  const comp = await type(props);
+
+  return typeof comp === "string" ? comp : await renderComponent(comp);
 }
 
 /** Required for "precompile" mode: render attributes */
