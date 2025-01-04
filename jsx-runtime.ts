@@ -14,10 +14,13 @@ type Content =
   | ((...args: unknown[]) => Content)
   | Content[];
 
+const ssxElement = Symbol.for("ssx.element");
+
 interface Component {
   // deno-lint-ignore no-explicit-any
   type: string | ((props: Props) => any);
   props: Props;
+  [ssxElement]: true;
 }
 
 const voidElements = new Set([
@@ -42,7 +45,7 @@ export function jsx(
   type: string,
   props: Props,
 ): Component {
-  return { type, props };
+  return { type, props, [ssxElement]: true };
 }
 
 /** Alias jsxs to jsx for compatibility with automatic runtime */
@@ -108,8 +111,8 @@ export async function jsxEscape(content: Content): Promise<string> {
 }
 
 function isComponent(value: unknown): value is Component {
-  return value !== null && typeof value === "object" && "type" in value &&
-    "props" in value;
+  return value !== null && typeof value === "object" &&
+    (value as Component)[ssxElement] === true;
 }
 
 export async function renderComponent(component: Component): Promise<string> {
