@@ -60,3 +60,8 @@ await Deno.writeTextFile(
     2,
   ),
 );
+
+await new Deno.Command("deno", {
+  args: ["fmt"],
+  cwd: "_npm",
+}).output();
