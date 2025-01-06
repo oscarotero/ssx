@@ -41,6 +41,20 @@ In your `deno.json` file:
 }
 ```
 
+## Using NPM specifier
+
+SSX is also
+[published on NPM as `@lumeland/ssx`](https://www.npmjs.com/package/@lumeland/ssx):
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "npm:@lumeland/ssx"
+  }
+}
+```
+
 ## Example:
 
 ```jsx
