@@ -22,3 +22,6 @@ jobs:
 
       - name: Run tests
         run: deno task test
+
+      - name: Run benchmark
+        run: deno task bench

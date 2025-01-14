@@ -20,7 +20,6 @@ interface Component {
   // deno-lint-ignore no-explicit-any
   type: string | ((props: Props) => any);
   props: Props;
-  [ssxElement]: true;
 }
 
 const voidElements = new Set([
@@ -40,12 +39,22 @@ const voidElements = new Set([
   "wbr",
 ]);
 
+const proto = Object.create(null, {
+  [ssxElement]: {
+    value: true,
+    enumerable: false,
+  },
+});
+
 /** The jsx function to create elements */
 export function jsx(
   type: string,
   props: Props,
 ): Component {
-  return { type, props, [ssxElement]: true };
+  const element = Object.create(proto);
+  element.type = type;
+  element.props = props;
+  return element;
 }
 
 /** Alias jsxs to jsx for compatibility with automatic runtime */
@@ -110,9 +119,10 @@ export async function jsxEscape(content: Content): Promise<string> {
   return content as Promise<string>;
 }
 
-function isComponent(value: unknown): value is Component {
+// deno-lint-ignore no-explicit-any
+function isComponent(value: any): value is Component {
   return value !== null && typeof value === "object" &&
-    (value as Component)[ssxElement] === true;
+    value[ssxElement] === true;
 }
 
 export async function renderComponent(component: Component): Promise<string> {

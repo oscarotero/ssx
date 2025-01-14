@@ -9,6 +9,7 @@
   },
   "tasks": {
     "test": "deno test -R",
+    "bench": "deno bench benchmark/bench.ts",
     "build-types": "deno run -A _scripts/types.ts && deno fmt html.ts",
     "build-npm": "deno run -A _scripts/build_npm.ts"
   },
