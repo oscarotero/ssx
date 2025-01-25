@@ -11,6 +11,7 @@ if (!version) {
 const files = [
   "jsx-runtime.ts",
   "html.ts",
+  "css.ts",
   "LICENSE",
   "README.md",
   "CHANGELOG.md",
@@ -29,6 +30,8 @@ await Deno.remove("_npm/tsconfig.json");
 await Deno.remove("_npm/jsx-runtime.ts");
 await Deno.remove("_npm/html.d.ts");
 await Deno.remove("_npm/html.js");
+await Deno.remove("_npm/css.d.ts");
+await Deno.remove("_npm/css.js");
 
 await Deno.writeTextFile(
   "_npm/package.json",
