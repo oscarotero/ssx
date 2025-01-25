@@ -1,4 +1,5 @@
 import { HTMLElements } from "./html.ts";
+import { CSSProperties } from "./css.ts";
 
 interface RawHtml {
   __html?: string;
@@ -171,6 +172,10 @@ export async function renderComponent(component: Component): Promise<string> {
 
 /** Required for "precompile" mode: render attributes */
 export function jsxAttr(name: string, value: unknown): string {
+  if (name === "style" && typeof value === "object") {
+    value = renderStyles(value as CSSProperties);
+  }
+
   if (typeof value === "string") {
     return `${name}="${value.replace(/"/g, "&quot;")}"`;
   }
@@ -201,4 +206,11 @@ declare global {
       children: Children;
     }
   }
+}
+
+function renderStyles(properties: CSSProperties) {
+  return Object.entries(properties)
+    .filter(([, value]) => value !== undefined && value !== null)
+    .map(([name, value]) => `${name}:${value};`)
+    .join("");
 }

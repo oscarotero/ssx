@@ -13,6 +13,12 @@ export default function Main() {
           </Header>
           <p
             class="foo"
+            style={{
+              bottom: undefined,
+              position: "static",
+              "--foo": "red",
+              background: "var(--foo)",
+            }}
             tabindex={2}
             dangerouslySetInnerHTML={{ __html: "<span>Raw content</span>" }}
           />

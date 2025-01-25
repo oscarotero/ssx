@@ -1,3 +1,5 @@
+import { CSSProperties } from "./css.ts";
+
 /**
  * All HTML elements
  */
@@ -1595,7 +1597,7 @@ interface GlobalAttributes {
    * Contains [CSS](https://developer.mozilla.org/docs/Web/CSS) styling declarations to be applied to the element. Note that it is recommended for styles to be defined in a separate file or files. This attribute and the [`<style>`](https://developer.mozilla.org/docs/Web/HTML/Element/style "The HTML <style> element contains style information for a document, or part of a document.") element have mainly the purpose of allowing for quick styling, for example for testing purposes.
    * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/style)
    */
-  style?: string;
+  style?: string | CSSProperties;
 
   /**
    * An integer attribute indicating if the element can take input focus (is _focusable_), if it should participate to sequential keyboard navigation, and if so, at what position. It can take several values:
