@@ -16,7 +16,7 @@ plain HTML code.
   available in Deno.
   > 7-20x faster rendering times and a 50% reduction in Garbage Collection
   > times.
-- Run `deno task bench` to compare SSX with Reach and Preact.
+- Run `deno task bench` to compare SSX with React, Hono and Preact.
 - Designed to output HTML. It uses real HTML attributes (no more `className`).
 - Great HTML and CSS documentation. Every element and property has a description
   and even links to [MDN documentation](https://developer.mozilla.org/). Types
