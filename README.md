@@ -11,15 +11,16 @@ SSX is a minimal JSX library designed to be used ONLY in server side and output
 plain HTML code.
 
 - Created in TypeScript, for Deno.
-- Very fast. It uses the
+- Very fast. It's compatible with the
   [`precompile` option](https://deno.com/blog/v1.38#fastest-jsx-transform)
   available in Deno.
   > 7-20x faster rendering times and a 50% reduction in Garbage Collection
   > times.
+- Run `deno task bench` to compare SSX with Reach and Preact.
 - Designed to output HTML. It uses real HTML attributes (no more `className`).
-- Great HTML documentation. Every element and property has a description and
-  even links to [MDN documentation](https://developer.mozilla.org/). Types are
-  generated using the data from
+- Great HTML and CSS documentation. Every element and property has a description
+  and even links to [MDN documentation](https://developer.mozilla.org/). Types
+  are generated using the data from
   [VSCode Custom Data](https://github.com/microsoft/vscode-custom-data).
 - It supports async components (components returning a Promise).
 - Allows to insert raw HTML code easily (without patronizing you).
