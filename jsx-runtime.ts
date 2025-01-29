@@ -126,7 +126,13 @@ function isComponent(value: any): value is Component {
     value[ssxElement] === true;
 }
 
-export async function renderComponent(component: Component): Promise<string> {
+export async function renderComponent(
+  component: Component | Component[],
+): Promise<string> {
+  if (Array.isArray(component)) {
+    return (await Promise.all(component.map(renderComponent))).join("");
+  }
+
   const { type, props } = component;
 
   // A Fragment

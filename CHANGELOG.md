@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.5] - 2025-01-29
+### Fixed
+- Fragment rendering.
+
 ## [0.1.4] - 2025-01-25
 ### Added
 - CSS types.
@@ -38,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [0.1.0] - 2024-07-20
 First version
 
+[0.1.5]: https://github.com/oscarotero/ssx/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/oscarotero/ssx/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/oscarotero/ssx/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/oscarotero/ssx/compare/v0.1.1...v0.1.2
