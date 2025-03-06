@@ -40,6 +40,11 @@ const voidElements = new Set([
   "wbr",
 ]);
 
+const attributes = new Map<string, string>([
+  ["className", "class"],
+  ["htmlFor", "for"],
+]);
+
 const proto = Object.create(null, {
   [ssxElement]: {
     value: true,
@@ -178,6 +183,8 @@ export async function renderComponent(
 
 /** Required for "precompile" mode: render attributes */
 export function jsxAttr(name: string, value: unknown): string {
+  name = attributes.get(name) ?? name;
+
   if (name === "style" && typeof value === "object") {
     value = renderStyles(value as CSSProperties);
   }

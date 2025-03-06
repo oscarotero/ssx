@@ -5,7 +5,7 @@ export default function Main() {
       <html>
         <body>
           <custom-element />
-          <p class={"foo" + 1}>Example:</p>
+          <p className={"foo" + 1}>Example:</p>
           <br />
           <Header name="World">
             Welcome to SSX
