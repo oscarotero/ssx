@@ -99,7 +99,7 @@ export async function jsxEscape(content: Content): Promise<string> {
     return (await Promise.all(content.map(jsxEscape))).join("");
   }
 
-  if (content == null || content === undefined) {
+  if (isEmpty(content)) {
     return "";
   }
 
@@ -178,7 +178,11 @@ export async function renderComponent(
 
   const comp = await type(props);
 
-  return typeof comp === "string" ? comp : await renderComponent(comp);
+  return isEmpty(comp)
+    ? ""
+    : typeof comp === "string"
+    ? comp
+    : await renderComponent(comp);
 }
 
 /** Required for "precompile" mode: render attributes */
@@ -193,12 +197,12 @@ export function jsxAttr(name: string, value: unknown): string {
     return `${name}="${value.replace(/"/g, "&quot;")}"`;
   }
 
-  if (typeof value === "boolean") {
-    return value ? name : "";
+  if (isEmpty(value)) {
+    return "";
   }
 
-  if (value == null || value === undefined) {
-    return "";
+  if (value === true) {
+    return name;
   }
 
   return `${name}="${value}"`;
@@ -213,6 +217,7 @@ declare global {
       | string
       | number
       | boolean
+      | null
       | Children[];
     export interface IntrinsicElements extends HTMLElements {}
     export interface ElementChildrenAttribute {
@@ -226,4 +231,8 @@ function renderStyles(properties: CSSProperties) {
     .filter(([, value]) => value !== undefined && value !== null)
     .map(([name, value]) => `${name}:${value};`)
     .join("");
+}
+
+function isEmpty(value: unknown): boolean {
+  return value == null || value === undefined || value === false;
 }

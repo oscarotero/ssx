@@ -26,6 +26,8 @@ export default function Main() {
             <Header name="World">Welcome to SSX</Header>
             {{ __html: "Raw <b>HTML</b> code" }}
           </MyDiv>
+          <Other enabled />
+          <Other enabled={false} />
         </body>
       </html>
     </>
@@ -35,7 +37,7 @@ export default function Main() {
 // Async component
 async function Header(
   { name, children }: { name: string; children: JSX.Children },
-) {
+): Promise<JSX.Children> {
   await new Promise((resolve) => setTimeout(resolve, 1));
 
   return (
@@ -52,5 +54,13 @@ function MyDiv(props: { children: JSX.Children }) {
     <div>
       {props.children}
     </div>
+  );
+}
+
+function Other({ enabled }: { enabled: boolean }) {
+  return (
+    <>
+      {enabled && <strong>Enabled</strong>}
+    </>
   );
 }
