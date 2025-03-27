@@ -105,10 +105,10 @@ export async function jsxEscape(content: Content): Promise<string> {
 
   switch (typeof content) {
     case "string":
-      return content.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
-        />/g,
-        "&gt;",
-      );
+      return content
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
     case "object":
       if ("__html" in content) {
         return (content as RawHtml).__html ?? "";
@@ -194,7 +194,7 @@ export function jsxAttr(name: string, value: unknown): string {
   }
 
   if (typeof value === "string") {
-    return `${name}="${value.replace(/"/g, "&quot;")}"`;
+    return `${name}="${value.replaceAll('"', "&quot;")}"`;
   }
 
   if (isEmpty(value)) {
