@@ -1,7 +1,7 @@
 export interface Inter {
   name: string;
   extends?: string;
-  description: string;
+  description?: string;
   properties: Props[];
   references?: string[];
   export?: boolean;
@@ -9,7 +9,7 @@ export interface Inter {
 
 export interface Props {
   name: string;
-  description: string;
+  description?: string;
   references?: string[];
   flags?: string[];
   value?: unknown;
@@ -43,10 +43,15 @@ function generateDoc(
   references?: string[],
   flags?: string[],
 ) {
-  if (!description) return "";
-  let str = `/**\n * ${
-    description.replaceAll("\n", "\n * ").replaceAll(" ", " ")
-  }\n`;
+  if (!description && !references?.length) {
+    return "";
+  }
+
+  let str = `/**\n`;
+
+  if (description) {
+    str += ` * ${description.replaceAll("\n", "\n * ").replaceAll(" ", " ")}\n`;
+  }
   if (references) {
     for (const ref of references) {
       str += ` * @see ${ref}\n`;

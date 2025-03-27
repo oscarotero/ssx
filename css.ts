@@ -85,11 +85,6 @@ export interface CSSProperties {
     | string;
 
   /**
-   * The align-tracks CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
-   */
-  "align-tracks"?: string;
-
-  /**
    * Shorthand that resets all properties except 'direction' and 'unicode-bidi'.
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
@@ -227,11 +222,6 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
   "aspect-ratio"?: string;
-
-  /**
-   * In combination with elevation, the azimuth CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
-   */
-  azimuth?: string;
 
   /**
    * The backdrop-filter CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything behind the element, to see the effect you must make the element or its background at least partially transparent.
@@ -863,7 +853,7 @@ export interface CSSProperties {
 
   /**
    * Specifies the position of the caption box with respect to the table box.
-   * Syntax: top | bottom | block-start | block-end | inline-start | inline-end
+   * Syntax: top | bottom
    * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
    */
   "caption-side"?: "bottom" | "top";
@@ -1273,7 +1263,7 @@ export interface CSSProperties {
 
   /**
    * Paints the interior of the given graphical element.
-   * Syntax: none | <color> | <url> [none | <color>]? | context-fill | context-stroke
+   * Syntax: <paint>
    * @see https://developer.mozilla.org/docs/Web/CSS/fill
    */
   fill?: "url()" | "none" | string;
@@ -1293,7 +1283,7 @@ export interface CSSProperties {
 
   /**
    * Processes an element's rendering before it is displayed in the document, by applying one or more filter effects.
-   * Syntax: none | <filter-function-list>
+   * Syntax: none | <filter-value-list>
    * @see https://developer.mozilla.org/docs/Web/CSS/filter
    */
   filter?:
@@ -1375,11 +1365,13 @@ export interface CSSProperties {
 
   /**
    * Indicates what color to use to flood the current filter primitive subregion.
+   * @see https://developer.mozilla.org/docs/Web/CSS/flood-color
    */
   "flood-color"?: string;
 
   /**
    * Indicates what opacity to use to flood the current filter primitive subregion.
+   * @see https://developer.mozilla.org/docs/Web/CSS/flood-opacity
    */
   "flood-opacity"?: string;
 
@@ -1804,7 +1796,7 @@ export interface CSSProperties {
 
   /**
    * Specifies the height of the content area, padding area or border area (depending on 'box-sizing') of certain boxes.
-   * Syntax: auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: auto | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
   height?: "auto" | "fit-content" | "max-content" | "min-content" | string | 0;
@@ -1837,7 +1829,7 @@ export interface CSSProperties {
 
   /**
    * Provides a hint to the user-agent about what aspects of an image are most important to preserve when the image is scaled, to aid the user-agent in the choice of an appropriate scaling algorithm.
-   * Syntax: auto | crisp-edges | pixelated
+   * Syntax: auto | crisp-edges | pixelated | smooth
    * @see https://developer.mozilla.org/docs/Web/CSS/image-rendering
    */
   "image-rendering"?:
@@ -1876,12 +1868,6 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
   "inline-size"?: "auto" | string | 0;
-
-  /**
-   * Enables or disables the obscuring a sensitive test input.
-   * Syntax: auto | none
-   */
-  "input-security"?: "auto" | "none";
 
   /**
    * The inset CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
@@ -2015,11 +2001,6 @@ export interface CSSProperties {
     | string;
 
   /**
-   * The justify-tracks CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis
-   */
-  "justify-tracks"?: string;
-
-  /**
    * Indicates whether the user agent should adjust inter-glyph spacing based on kerning tables that are included in the relevant font or instead disable auto-kerning and set inter-character spacing to a specific length.
    */
   kerning?: "auto" | 0;
@@ -2040,6 +2021,7 @@ export interface CSSProperties {
 
   /**
    * Defines the color of the light source for filter primitives 'feDiffuseLighting' and 'feSpecularLighting'.
+   * @see https://developer.mozilla.org/docs/Web/CSS/lighting-color
    */
   "lighting-color"?: string;
 
@@ -2052,7 +2034,7 @@ export interface CSSProperties {
 
   /**
    * The line-clamp property allows limiting the contents of a block container to the specified number of lines; remaining content is fragmented away and neither rendered nor measured. Optionally, it also allows inserting content into the last line box to indicate the continuity of truncated/interrupted content.
-   * @see https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-clamp
    */
   "line-clamp"?: string;
 
@@ -2136,7 +2118,7 @@ export interface CSSProperties {
 
   /**
    * Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits.
-   * Syntax: [ <length> | <percentage> | auto ]{1,4}
+   * Syntax: <'margin-top'>{1,4}
    * @see https://developer.mozilla.org/docs/Web/CSS/margin
    */
   margin?: "auto" | string | 0;
@@ -2149,21 +2131,21 @@ export interface CSSProperties {
 
   /**
    * Logical 'margin-bottom'. Mapping depends on the parent element's 'writing-mode', 'direction', and 'text-orientation'.
-   * Syntax: <'margin-left'>
+   * Syntax: <'margin-top'>
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
    */
   "margin-block-end"?: "auto" | string | 0;
 
   /**
    * Logical 'margin-top'. Mapping depends on the parent element's 'writing-mode', 'direction', and 'text-orientation'.
-   * Syntax: <'margin-left'>
+   * Syntax: <'margin-top'>
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
    */
   "margin-block-start"?: "auto" | string | 0;
 
   /**
    * Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits..
-   * Syntax: <length> | <percentage> | auto
+   * Syntax: <length-percentage> | auto
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   "margin-bottom"?: "auto" | string | 0;
@@ -2176,35 +2158,35 @@ export interface CSSProperties {
 
   /**
    * Logical 'margin-right'. Mapping depends on the parent element's 'writing-mode', 'direction', and 'text-orientation'.
-   * Syntax: <'margin-left'>
+   * Syntax: <'margin-top'>
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
   "margin-inline-end"?: "auto" | string | 0;
 
   /**
    * Logical 'margin-left'. Mapping depends on the parent element's 'writing-mode', 'direction', and 'text-orientation'.
-   * Syntax: <'margin-left'>
+   * Syntax: <'margin-top'>
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
   "margin-inline-start"?: "auto" | string | 0;
 
   /**
    * Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits..
-   * Syntax: <length> | <percentage> | auto
+   * Syntax: <length-percentage> | auto
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
    */
   "margin-left"?: "auto" | string | 0;
 
   /**
    * Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits..
-   * Syntax: <length> | <percentage> | auto
+   * Syntax: <length-percentage> | auto
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
    */
   "margin-right"?: "auto" | string | 0;
 
   /**
    * Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits..
-   * Syntax: <length> | <percentage> | auto
+   * Syntax: <length-percentage> | auto
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
    */
   "margin-top"?: "auto" | string | 0;
@@ -2355,11 +2337,6 @@ export interface CSSProperties {
   "mask-type"?: "alpha" | "luminance";
 
   /**
-   * The masonry-auto-flow CSS property modifies how items are placed when using masonry in CSS Grid Layout.
-   */
-  "masonry-auto-flow"?: string;
-
-  /**
    * Describe a notion of "depth" for each element of a mathematical formula, with respect to the top-level container of that formula.
    * @see https://developer.mozilla.org/docs/Web/CSS/math-depth
    */
@@ -2388,7 +2365,7 @@ export interface CSSProperties {
 
   /**
    * Allows authors to constrain content height to a certain range.
-   * Syntax: none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: none | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/max-height
    */
   "max-height"?:
@@ -2413,7 +2390,7 @@ export interface CSSProperties {
 
   /**
    * Allows authors to constrain content width to a certain range.
-   * Syntax: none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: none | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/max-width
    */
   "max-width"?:
@@ -2432,7 +2409,7 @@ export interface CSSProperties {
 
   /**
    * Allows authors to constrain content height to a certain range.
-   * Syntax: auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: auto | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/min-height
    */
   "min-height"?:
@@ -2451,7 +2428,7 @@ export interface CSSProperties {
 
   /**
    * Allows authors to constrain content width to a certain range.
-   * Syntax: auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: auto | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/min-width
    */
   "min-width"?:
@@ -2622,7 +2599,7 @@ export interface CSSProperties {
 
   /**
    * Shorthand property for 'outline-style', 'outline-width', and 'outline-color'.
-   * Syntax: [ <'outline-width'> || <'outline-style'> || <'outline-color'> ]
+   * Syntax: <'outline-width'> || <'outline-style'> || <'outline-color'>
    * @see https://developer.mozilla.org/docs/Web/CSS/outline
    */
   outline?: "auto" | "invert" | string | 0;
@@ -2642,7 +2619,7 @@ export interface CSSProperties {
 
   /**
    * Style of the outline.
-   * Syntax: auto | <'border-style'>
+   * Syntax: auto | <outline-line-style>
    * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
    */
   "outline-style"?: "auto" | string;
@@ -3374,9 +3351,10 @@ export interface CSSProperties {
 
   /**
    * Paints along the outline of the given graphical element.
+   * Syntax: <paint>
    * @see https://developer.mozilla.org/docs/Web/CSS/stroke
    */
-  stroke?: "url()" | "none";
+  stroke?: "url()" | "none" | string;
 
   /**
    * Controls the pattern of dashes and gaps used to stroke paths.
@@ -3456,6 +3434,25 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/text-anchor
    */
   "text-anchor"?: "end" | "middle" | "start";
+
+  /**
+   * The text-box CSS property is a shorthand that corresponds to the text-box-trim and text-box-edge properties, which together specify the amount of space to trim from the block-start edge and block-end edge of a text element's block container.
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-box
+   */
+  "text-box"?: string;
+
+  /**
+   * The text-box-edge CSS property specifies an amount of space to trim from a text element's block container.
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-box-edge
+   */
+  "text-box-edge"?: string;
+
+  /**
+   * The text-box-trim CSS property specifies which of the over and under edges of text content to trim from a text element's block container.
+   * Syntax: none | trim-start | trim-end | trim-both
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-box-trim
+   */
+  "text-box-trim"?: "none" | "trim-start" | "trim-end" | "trim-both";
 
   /**
    * The text-combine-upright CSS property specifies the combination of multiple characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
@@ -3612,21 +3609,14 @@ export interface CSSProperties {
 
   /**
    * The text-spacing-trim CSS property controls the internal spacing set on Chinese/Japanese/Korean (CJK) punctuation characters between adjacent characters (kerning) and at the start or end of text lines.
-   * Syntax: space-all | normal | space-first | trim-start | trim-both | trim-all | auto
+   * Syntax: space-all | normal | space-first | trim-start
    * @see https://developer.mozilla.org/docs/Web/CSS/text-spacing-trim
    */
-  "text-spacing-trim"?:
-    | "space-all"
-    | "normal"
-    | "space-first"
-    | "trim-start"
-    | "trim-both"
-    | "trim-all"
-    | "auto";
+  "text-spacing-trim"?: "space-all" | "normal" | "space-first" | "trim-start";
 
   /**
    * Controls capitalization effects of an element's text.
-   * Syntax: none | capitalize | uppercase | lowercase | full-width | full-size-kana
+   * Syntax: none | [ capitalize | uppercase | lowercase ] || full-width || full-size-kana | math-auto
    * @see https://developer.mozilla.org/docs/Web/CSS/text-transform
    */
   "text-transform"?: "capitalize" | "lowercase" | "none" | "uppercase";
@@ -3652,10 +3642,10 @@ export interface CSSProperties {
 
   /**
    * The text-wrap-mode CSS property controls whether the text inside an element is wrapped. The different values provide alternate ways of wrapping the content of a block element. It can also be set, and reset, using the {{CSSXRef("text-wrap")}} shorthand.
-   * Syntax: auto | wrap | nowrap
+   * Syntax: wrap | nowrap
    * @see https://developer.mozilla.org/docs/Web/CSS/text-wrap-mode
    */
-  "text-wrap-mode"?: "auto" | "wrap" | "nowrap";
+  "text-wrap-mode"?: "wrap" | "nowrap";
 
   /**
    * The text-wrap-style CSS property controls how text inside an element is wrapped. The different values provide alternate ways of wrapping the content of a block element. It can also be set, and reset, using the {{CSSXRef("text-wrap")}} shorthand.
@@ -3807,7 +3797,7 @@ export interface CSSProperties {
 
   /**
    * Controls the appearance of selection.
-   * Syntax: auto | text | none | contain | all
+   * Syntax: auto | text | none | all
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
   "user-select"?: "all" | "auto" | "contain" | "none" | "text";
@@ -3867,6 +3857,8 @@ export interface CSSProperties {
    */
   "view-timeline-name"?: string;
 
+  "view-transition-class"?: string;
+
   /**
    * The view-transition-name CSS property provides the selected element with a distinct identifying name (a custom-ident) and causes it to participate in a separate view transition from the root view transition — or no view transition if the none value is specified.
    * @see https://developer.mozilla.org/docs/Web/CSS/view-transition-name
@@ -3888,12 +3880,11 @@ export interface CSSProperties {
 
   /**
    * The white-space-collapse CSS property controls how white space inside an element is collapsed.
-   * Syntax: collapse | discard | preserve | preserve-breaks | preserve-spaces | break-spaces
+   * Syntax: collapse | preserve | preserve-breaks | preserve-spaces | break-spaces
    * @see https://developer.mozilla.org/docs/Web/CSS/white-space-collapse
    */
   "white-space-collapse"?:
     | "collapse"
-    | "discard"
     | "preserve"
     | "preserve-breaks"
     | "preserve-spaces"
@@ -3907,7 +3898,7 @@ export interface CSSProperties {
 
   /**
    * Specifies the width of the content area, padding area or border area (depending on 'box-sizing') of certain boxes.
-   * Syntax: auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)
+   * Syntax: auto | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content(<length-percentage [0,∞]>) | <calc-size()> | <anchor-size()>
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    */
   width?: "auto" | "fit-content" | "max-content" | "min-content" | string | 0;
@@ -3921,7 +3912,7 @@ export interface CSSProperties {
 
   /**
    * Specifies line break opportunities for non-CJK scripts.
-   * Syntax: normal | break-all | keep-all | break-word
+   * Syntax: normal | break-all | keep-all | break-word | auto-phrase
    * @see https://developer.mozilla.org/docs/Web/CSS/word-break
    */
   "word-break"?: "break-all" | "keep-all" | "normal";
@@ -3972,7 +3963,7 @@ export interface CSSProperties {
 
   /**
    * Non-standard. Specifies the magnification scale of the object. See 'transform: scale()' for a standards-based alternative.
-   * Syntax: normal | reset | <number> | <percentage>
+   * Syntax: normal | reset | <number [0,∞]> || <percentage [0,∞]>
    * @see https://developer.mozilla.org/docs/Web/CSS/zoom
    */
   zoom?: "normal" | string | number;

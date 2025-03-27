@@ -13,7 +13,6 @@
     "build-types": "deno task build-types:html & deno task build-types:css",
     "build-types:html": "deno run -A _scripts/types_html.ts && deno fmt html.ts",
     "build-types:css": "deno run -A _scripts/types_css.ts && deno fmt css.ts",
-    "build-types:svg": "deno run -A _scripts/types_svg.ts && deno fmt svg.ts",
     "build-npm": "deno run -A _scripts/build_npm.ts"
   },
   "exclude": [

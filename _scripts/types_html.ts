@@ -2,10 +2,13 @@
 
 import { Inter, Props, renderInterface } from "./types.ts";
 
-const res = await fetch(
+const htmlData = await (await fetch(
   "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@latest/data/browsers.html-data.json",
-);
-const data = await res.json();
+)).json();
+
+const svgData = await (await fetch(
+  "https://cdn.jsdelivr.net/npm/@michijs/vscode-svg@latest/dist/svg.json",
+)).json();
 
 const numericAttrs = [
   "colspan",
@@ -38,6 +41,7 @@ const numericAttrs = [
   "aria-valuenow",
 ];
 
+// Global HTML & SVG attributes
 const globalAttributes: Inter = {
   name: "GlobalAttributes",
   description:
@@ -45,11 +49,20 @@ const globalAttributes: Inter = {
   properties: [],
 };
 
-const tags: Inter[] = [];
+const added = new Set<string>();
 
-for (const attr of data.globalAttributes) {
-  globalAttributes.properties.push(createProperty(attr));
+for (const data of [htmlData, svgData]) {
+  for (const attr of data.globalAttributes) {
+    if (added.has(attr.name)) {
+      continue;
+    }
+    added.add(attr.name);
+    globalAttributes.properties.push(createProperty(attr, data.valueSets));
+  }
 }
+
+// HTML & SVG elements
+const tags: Inter[] = [];
 
 const intrinsicElements: Inter = {
   export: true,
@@ -57,44 +70,52 @@ const intrinsicElements: Inter = {
   description: "All HTML elements",
   properties: [],
 };
-
-for (const tag of data.tags) {
-  const properties = new Map<string, Props>();
-
-  for (const attr of tag.attributes) {
-    const global = globalAttributes.properties.find((prop) =>
-      prop.name === attr.name
-    );
-    if (global) {
+added.clear();
+for (const data of [htmlData, svgData]) {
+  for (const tag of data.tags) {
+    if (added.has(tag.name)) {
       continue;
     }
-    const property = createProperty(attr);
-    const duplicated = properties.get(attr.name);
+    added.add(tag.name);
 
-    if (duplicated) {
-      duplicated.description = duplicated.description + "\n" +
-        attr.description?.value;
-      continue;
+    const properties = new Map<string, Props>();
+
+    for (const attr of tag.attributes) {
+      const global = globalAttributes.properties.find((prop) =>
+        prop.name === attr.name
+      );
+      if (global) {
+        continue;
+      }
+      const property = createProperty(attr, data.valueSets);
+      const duplicated = properties.get(attr.name);
+
+      if (duplicated) {
+        duplicated.description = duplicated.description + "\n" +
+          attr.description?.value;
+        continue;
+      }
+
+      properties.set(property.name, property);
     }
 
-    properties.set(property.name, property);
-  }
+    if (properties.size) {
+      tags.push({
+        name: toTitleCase(tag.name),
+        extends: "GlobalAttributes",
+        properties: Array.from(properties.values()),
+      });
+    }
 
-  if (properties.size) {
-    tags.push({
-      name: toTitleCase(tag.name),
-      description: "",
-      extends: "GlobalAttributes",
-      properties: Array.from(properties.values()),
+    intrinsicElements.properties.push({
+      name: tag.name,
+      description: getDescription(tag.description),
+      references: tag.references?.map((ref: any) =>
+        `[${ref.name}](${ref.url})`
+      ),
+      value: properties.size ? toTitleCase(tag.name) : "GlobalAttributes",
     });
   }
-
-  intrinsicElements.properties.push({
-    name: tag.name,
-    description: tag.description?.value,
-    references: tag.references?.map((ref: any) => `[${ref.name}](${ref.url})`),
-    value: properties.size ? toTitleCase(tag.name) : "GlobalAttributes",
-  });
 }
 
 globalAttributes.properties.push({
@@ -114,16 +135,15 @@ function toTitleCase(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
-function createProperty(attr: any): Props {
+function createProperty(attr: any, valueSets: any): Props {
   let value = "string";
   if (attr.valueSet) {
     if (attr.valueSet === "v") {
       value = "boolean";
     } else {
-      const valueSet = data.valueSets.find((val: any) =>
-        val.name === attr.valueSet
-      );
-      value = valueSet.values.map((v: any) => `"${v.name}"`).join(" | ");
+      const valueSet = valueSets.find((val: any) => val.name === attr.valueSet);
+      value = valueSet?.values.map((v: any) => `"${v.name}"`).join(" | ") ??
+        "string";
     }
   }
   if (numericAttrs.includes(attr.name) && value === "string") {
@@ -134,10 +154,14 @@ function createProperty(attr: any): Props {
   }
   return {
     name: attr.name,
-    description: attr.description?.value,
+    description: getDescription(attr.description),
     references: attr.references?.map((ref: any) => `[${ref.name}](${ref.url})`),
     value,
   };
+}
+
+function getDescription(description: any): string | undefined {
+  return typeof description === "string" ? description : description?.value;
 }
 
 const code = [

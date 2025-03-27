@@ -11,6 +11,9 @@ export default function Main() {
             Welcome to SSX
             {{ __html: "Raw <b>HTML</b> code" }}
           </Header>
+          <svg>
+            <path d="M2"></path>
+          </svg>
           <p
             class="foo"
             style={{
