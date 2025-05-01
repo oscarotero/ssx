@@ -11,19 +11,19 @@ export interface HTMLElements {
 
   /**
    * If the a element has an href attribute, then it represents a hyperlink (a hypertext anchor) labeled by its contents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/a)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/a)
    */
   a?: A;
 
   /**
    * The abbr element represents an abbreviation or acronym, optionally with its expansion. The title attribute may be used to provide an expansion of the abbreviation. The attribute, if specified, must contain an expansion of the abbreviation, and nothing else.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/abbr)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/abbr)
    */
   abbr?: GlobalAttributes;
 
   /**
    * The address element represents the contact information for its nearest article or body element ancestor. If that is the body element, then the contact information applies to the document as a whole.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/address)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/address)
    */
   address?: GlobalAttributes;
 
@@ -47,85 +47,85 @@ export interface HTMLElements {
 
   /**
    * The area element represents either a hyperlink with some text and a corresponding area on an image map, or a dead area on an image map.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/area)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/area)
    */
   area?: Area;
 
   /**
    * The article element represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content. Each article should be identified, typically by including a heading (h1–h6 element) as a child of the article element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/article)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/article)
    */
   article?: GlobalAttributes;
 
   /**
    * The aside element represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Such sections are often represented as sidebars in printed typography.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/aside)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/aside)
    */
   aside?: GlobalAttributes;
 
   /**
    * An audio element represents a sound or audio stream.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/audio)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/audio)
    */
   audio?: Audio;
 
   /**
    * The b element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood, such as key words in a document abstract, product names in a review, actionable words in interactive text-driven software, or an article lede.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/b)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/b)
    */
   b?: GlobalAttributes;
 
   /**
    * The base element allows authors to specify the document base URL for the purposes of resolving relative URLs, and the name of the default browsing context for the purposes of following hyperlinks. The element does not represent any content beyond this information.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/base)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/base)
    */
   base?: Base;
 
   /**
    * The bdi element represents a span of text that is to be isolated from its surroundings for the purposes of bidirectional text formatting. [BIDI]
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/bdi)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/bdi)
    */
   bdi?: GlobalAttributes;
 
   /**
    * The bdo element represents explicit text directionality formatting control for its children. It allows authors to override the Unicode bidirectional algorithm by explicitly specifying a direction override. [BIDI]
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/bdo)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/bdo)
    */
   bdo?: GlobalAttributes;
 
   /**
    * The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element, and optionally with in-line changes such as annotations and abbreviations.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/blockquote)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/blockquote)
    */
   blockquote?: Blockquote;
 
   /**
    * The body element represents the content of the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/body)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body)
    */
   body?: Body;
 
   /**
    * The br element represents a line break.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/br)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/br)
    */
   br?: Br;
 
   /**
    * The button element represents a button labeled by its contents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/button)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button)
    */
   button?: Button;
 
   /**
    * The canvas element provides scripts with a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, art, or other visual images on the fly.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/canvas)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/canvas)
    */
   canvas?: Canvas;
 
   /**
    * The caption element represents the title of the table that is its parent, if it has a parent and that is a table element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/caption)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/caption)
    */
   caption?: Caption;
 
@@ -137,7 +137,7 @@ export interface HTMLElements {
 
   /**
    * The cite element represents a reference to a creative work. It must include the title of the work or the name of the author(person, people or organization) or an URL reference, or a reference in abbreviated form as per the conventions used for the addition of citation metadata.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/cite)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/cite)
    */
   cite?: GlobalAttributes;
 
@@ -149,37 +149,37 @@ export interface HTMLElements {
 
   /**
    * The code element represents a fragment of computer code. This could be an XML element name, a file name, a computer program, or any other string that a computer would recognize.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/code)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/code)
    */
   code?: GlobalAttributes;
 
   /**
    * If a col element has a parent and that is a colgroup element that itself has a parent that is a table element, then the col element represents one or more columns in the column group represented by that colgroup.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/col)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/col)
    */
   col?: Col;
 
   /**
    * The colgroup element represents a group of one or more columns in the table that is its parent, if it has a parent and that is a table element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/colgroup)
    */
   colgroup?: Colgroup;
 
   /**
    * The data element links a given piece of content with a machine-readable translation.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/data)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/data)
    */
   data?: Data;
 
   /**
    * The datalist element represents a set of option elements that represent predefined options for other controls. In the rendering, the datalist element represents nothing and it, along with its children, should be hidden.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/datalist)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/datalist)
    */
   datalist?: GlobalAttributes;
 
   /**
    * The dd element represents the description, definition, or value, part of a term-description group in a description list (dl element).
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/dd)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dd)
    */
   dd?: Dd;
 
@@ -191,7 +191,7 @@ export interface HTMLElements {
 
   /**
    * The del element represents a removal from the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/del)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/del)
    */
   del?: Del;
 
@@ -203,19 +203,19 @@ export interface HTMLElements {
 
   /**
    * The details element represents a disclosure widget from which the user can obtain additional information or controls.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/details)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details)
    */
   details?: Details;
 
   /**
    * The dfn element represents the defining instance of a term. The paragraph, description list group, or section that is the nearest ancestor of the dfn element must also contain the definition(s) for the term given by the dfn element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/dfn)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dfn)
    */
   dfn?: GlobalAttributes;
 
   /**
    * The dialog element represents a part of an application that a user interacts with to perform a task, for example a dialog box, inspector, or window.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/dialog)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dialog)
    */
   dialog?: Dialog;
 
@@ -227,19 +227,19 @@ export interface HTMLElements {
 
   /**
    * The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/div)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/div)
    */
   div?: GlobalAttributes;
 
   /**
    * The dl element represents an association list consisting of zero or more name-value groups (a description list). A name-value group consists of one or more names (dt elements) followed by one or more values (dd elements), ignoring any nodes other than dt and dd elements. Within a single dl element, there should not be more than one dt element for each name.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/dl)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dl)
    */
   dl?: GlobalAttributes;
 
   /**
    * The dt element represents the term, or name, part of a term-description group in a description list (dl element).
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/dt)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dt)
    */
   dt?: GlobalAttributes;
 
@@ -251,13 +251,13 @@ export interface HTMLElements {
 
   /**
    * The em element represents stress emphasis of its contents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/em)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/em)
    */
   em?: GlobalAttributes;
 
   /**
    * The embed element provides an integration point for an external (typically non-HTML) application or interactive content.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/embed)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/embed)
    */
   embed?: Embed;
 
@@ -376,6 +376,12 @@ export interface HTMLElements {
   feMorphology?: FeMorphology;
 
   /**
+   * The fencedframe element represents a nested browsing context, embedding another HTML page into the current one.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/fencedframe)
+   */
+  fencedframe?: Fencedframe;
+
+  /**
    * The <feOffset> SVG filter primitive allows to offset the input image.
    * @see [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feOffset)
    */
@@ -413,19 +419,19 @@ export interface HTMLElements {
 
   /**
    * The fieldset element represents a set of form controls optionally grouped under a common name.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/fieldset)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/fieldset)
    */
   fieldset?: Fieldset;
 
   /**
    * The figcaption element represents a caption or legend for the rest of the contents of the figcaption element's parent figure element, if any.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/figcaption)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/figcaption)
    */
   figcaption?: GlobalAttributes;
 
   /**
    * The figure element represents some flow content, optionally with a caption, that is self-contained (like a complete sentence) and is typically referenced as a single unit from the main flow of the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/figure)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/figure)
    */
   figure?: GlobalAttributes;
 
@@ -437,7 +443,7 @@ export interface HTMLElements {
 
   /**
    * The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/footer)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/footer)
    */
   footer?: GlobalAttributes;
 
@@ -449,7 +455,7 @@ export interface HTMLElements {
 
   /**
    * The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/form)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/form)
    */
   form?: Form;
 
@@ -461,79 +467,79 @@ export interface HTMLElements {
 
   /**
    * The h1 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h1?: GlobalAttributes;
 
   /**
    * The h2 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h2?: GlobalAttributes;
 
   /**
    * The h3 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h3?: GlobalAttributes;
 
   /**
    * The h4 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h4?: GlobalAttributes;
 
   /**
    * The h5 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h5?: GlobalAttributes;
 
   /**
    * The h6 element represents a section heading.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/Heading_Elements)
    */
   h6?: GlobalAttributes;
 
   /**
    * The head element represents a collection of metadata for the Document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/head)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/head)
    */
   head?: Head;
 
   /**
    * The header element represents introductory content for its nearest ancestor sectioning content or sectioning root element. A header typically contains a group of introductory or navigational aids. When the nearest ancestor sectioning content or sectioning root element is the body element, then it applies to the whole page.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/header)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/header)
    */
   header?: GlobalAttributes;
 
   /**
    * The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/hgroup)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/hgroup)
    */
   hgroup?: GlobalAttributes;
 
   /**
    * The hr element represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/hr)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/hr)
    */
   hr?: Hr;
 
   /**
    * The html element represents the root of an HTML document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/html)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/html)
    */
   html?: Html;
 
   /**
    * The i element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a thought, or a ship name in Western texts.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/i)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/i)
    */
   i?: GlobalAttributes;
 
   /**
    * The iframe element represents a nested browsing context.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/iframe)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe)
    */
   iframe?: Iframe;
 
@@ -545,43 +551,43 @@ export interface HTMLElements {
 
   /**
    * An img element represents an image.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/img)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/img)
    */
   img?: Img;
 
   /**
    * The input element represents a typed data field, usually with a form control to allow the user to edit the data.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/input)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input)
    */
   input?: Input;
 
   /**
    * The ins element represents an addition to the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/ins)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/ins)
    */
   ins?: Ins;
 
   /**
    * The kbd element represents user input (typically keyboard input, although it may also be used to represent other input, such as voice commands).
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/kbd)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/kbd)
    */
   kbd?: GlobalAttributes;
 
   /**
    * The label element represents a caption in a user interface. The caption can be associated with a specific form control, known as the label element's labeled control, either using the for attribute, or by putting the form control inside the label element itself.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/label)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/label)
    */
   label?: Label;
 
   /**
    * The legend element represents a caption for the rest of the contents of the legend element's parent fieldset element, if any.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/legend)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/legend)
    */
   legend?: GlobalAttributes;
 
   /**
    * The li element represents a list item. If its parent element is an ol, ul, or menu element, then the element is an item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined list-related relationship to any other li element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/li)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/li)
    */
   li?: Li;
 
@@ -599,25 +605,25 @@ export interface HTMLElements {
 
   /**
    * The link element allows authors to link their document to other resources.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/link)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/link)
    */
   link?: Link;
 
   /**
    * The main element represents the main content of the body of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document or central functionality of an application.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/main)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/main)
    */
   main?: GlobalAttributes;
 
   /**
    * The map element, in conjunction with an img element and any area element descendants, defines an image map. The element represents its children.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/map)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/map)
    */
   map?: Map;
 
   /**
    * The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context. When used in a quotation or other block of text referred to from the prose, it indicates a highlight that was not originally present but which has been added to bring the reader's attention to a part of the text that might not have been considered important by the original author when the block was originally written, but which is now under previously unexpected scrutiny. When used in the main prose of a document, it indicates a part of the document that has been highlighted due to its likely relevance to the user's current activity.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/mark)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/mark)
    */
   mark?: GlobalAttributes;
 
@@ -635,13 +641,13 @@ export interface HTMLElements {
 
   /**
    * The menu element represents an unordered list of interactive items.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/menu)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/menu)
    */
   menu?: GlobalAttributes;
 
   /**
    * The meta element represents various kinds of metadata that cannot be expressed using the title, base, link, style, and script elements.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/meta)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/meta)
    */
   meta?: Meta;
 
@@ -653,7 +659,7 @@ export interface HTMLElements {
 
   /**
    * The meter element represents a scalar measurement within a known range, or a fractional value; for example disk usage, the relevance of a query result, or the fraction of a voting population to have selected a particular candidate.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/meter)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/meter)
    */
   meter?: Meter;
 
@@ -665,55 +671,55 @@ export interface HTMLElements {
 
   /**
    * The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/nav)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/nav)
    */
   nav?: GlobalAttributes;
 
   /**
    * The noscript element represents nothing if scripting is enabled, and represents its children if scripting is disabled. It is used to present different markup to user agents that support scripting and those that don't support scripting, by affecting how the document is parsed.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/noscript)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/noscript)
    */
   noscript?: GlobalAttributes;
 
   /**
    * The object element can represent an external resource, which, depending on the type of the resource, will either be treated as an image, as a nested browsing context, or as an external resource to be processed by a plugin.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/object)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/object)
    */
   object?: Object;
 
   /**
    * The ol element represents a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/ol)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/ol)
    */
   ol?: Ol;
 
   /**
    * The optgroup element represents a group of option elements with a common label.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/optgroup)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/optgroup)
    */
   optgroup?: Optgroup;
 
   /**
    * The option element represents an option in a select element or as part of a list of suggestions in a datalist element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/option)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/option)
    */
   option?: Option;
 
   /**
    * The output element represents the result of a calculation performed by the application, or the result of a user action.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/output)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/output)
    */
   output?: Output;
 
   /**
    * The p element represents a paragraph.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/p)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/p)
    */
   p?: GlobalAttributes;
 
   /**
    * The param element defines parameters for plugins invoked by object elements. It does not represent anything on its own.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/param)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/param)
    */
   param?: Param;
 
@@ -731,7 +737,7 @@ export interface HTMLElements {
 
   /**
    * The picture element is a container which provides multiple sources to its contained img element to allow authors to declaratively control or give hints to the user agent about which image resource to use, based on the screen pixel density, viewport size, image format, and other factors. It represents its children.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/picture)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/picture)
    */
   picture?: GlobalAttributes;
 
@@ -749,19 +755,19 @@ export interface HTMLElements {
 
   /**
    * The pre element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/pre)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/pre)
    */
   pre?: Pre;
 
   /**
    * The progress element represents the completion progress of a task. The progress is either indeterminate, indicating that progress is being made but that it is not clear how much more work remains to be done before the task is complete (e.g. because the task is waiting for a remote host to respond), or the progress is a number in the range zero to a maximum, giving the fraction of work that has so far been completed.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/progress)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/progress)
    */
   progress?: Progress;
 
   /**
    * The q element represents some phrasing content quoted from another source.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/q)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/q)
    */
   q?: Q;
 
@@ -773,7 +779,7 @@ export interface HTMLElements {
 
   /**
    * The rb element marks the base text component of a ruby annotation. When it is the child of a ruby element, it doesn't represent anything itself, but its parent ruby element uses it as part of determining what it represents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/rb)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/rb)
    */
   rb?: GlobalAttributes;
 
@@ -785,51 +791,63 @@ export interface HTMLElements {
 
   /**
    * The rp element is used to provide fallback text to be shown by user agents that don't support ruby annotations. One widespread convention is to provide parentheses around the ruby text component of a ruby annotation.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/rp)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/rp)
    */
   rp?: GlobalAttributes;
 
   /**
    * The rt element marks the ruby text component of a ruby annotation. When it is the child of a ruby element or of an rtc element that is itself the child of a ruby element, it doesn't represent anything itself, but its ancestor ruby element uses it as part of determining what it represents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/rt)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/rt)
    */
   rt?: GlobalAttributes;
 
   /**
    * The ruby element allows one or more spans of phrasing content to be marked with ruby annotations. Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations. In Japanese, this form of typography is also known as furigana. Ruby text can appear on either side, and sometimes both sides, of the base text, and it is possible to control its position using CSS. A more complete introduction to ruby can be found in the Use Cases & Exploratory Approaches for Ruby Markup document as well as in CSS Ruby Module Level 1. [RUBY-UC] [CSSRUBY]
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/ruby)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/ruby)
    */
   ruby?: GlobalAttributes;
 
   /**
    * The s element represents contents that are no longer accurate or no longer relevant.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/s)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/s)
    */
   s?: GlobalAttributes;
 
   /**
    * The samp element represents sample or quoted output from another program or computing system.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/samp)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/samp)
    */
   samp?: GlobalAttributes;
 
   /**
    * The script element allows authors to include dynamic script and data blocks in their documents. The element does not represent content for the user.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/script)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script)
    */
   script?: Script;
 
   /**
+   * The search element represents the parts of the document or application with form controls or other content related to performing a search or filtering operation.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/search)
+   */
+  search?: GlobalAttributes;
+
+  /**
    * The section element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content. Each section should be identified, typically by including a heading ( h1- h6 element) as a child of the section element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/section)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/section)
    */
   section?: GlobalAttributes;
 
   /**
    * The select element represents a control for selecting amongst a set of options.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/select)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/select)
    */
   select?: Select;
+
+  /**
+   * The selectedcontent element can be used to display the content of the currently selected option element inside of a closed select element.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/selectedcontent)
+   */
+  selectedcontent?: GlobalAttributes;
 
   /**
    * The <set> element provides a simple means of just setting the value of an attribute for a specified duration. It supports all attribute types, including those that cannot reasonably be interpolated, such as string and boolean values. The <set> element is non-additive. The additive and accumulate attributes are not allowed, and will be ignored if specified.
@@ -839,25 +857,25 @@ export interface HTMLElements {
 
   /**
    * The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/slot)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/slot)
    */
   slot?: Slot;
 
   /**
    * The small element represents side comments such as small print.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/small)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/small)
    */
   small?: GlobalAttributes;
 
   /**
    * The source element allows authors to specify multiple alternative media resources for media elements. It does not represent anything on its own.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/source)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/source)
    */
   source?: Source;
 
   /**
    * The span element doesn't mean anything on its own, but can be useful when used together with the global attributes, e.g. class, lang, or dir. It represents its children.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/span)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/span)
    */
   span?: GlobalAttributes;
 
@@ -869,31 +887,31 @@ export interface HTMLElements {
 
   /**
    * The strong element represents strong importance, seriousness, or urgency for its contents.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/strong)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/strong)
    */
   strong?: GlobalAttributes;
 
   /**
    * The style element allows authors to embed style information in their documents. The style element is one of several inputs to the styling processing model. The element does not represent content for the user.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/style)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/style)
    */
   style?: Style;
 
   /**
    * The sub element represents a subscript.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/sub)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/sub)
    */
   sub?: GlobalAttributes;
 
   /**
    * The summary element represents a summary, caption, or legend for the rest of the contents of the summary element's parent details element, if any.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/summary)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/summary)
    */
   summary?: GlobalAttributes;
 
   /**
    * The sup element represents a superscript.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/sup)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/sup)
    */
   sup?: GlobalAttributes;
 
@@ -917,25 +935,25 @@ export interface HTMLElements {
 
   /**
    * The table element represents data with more than one dimension, in the form of a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/table)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table)
    */
   table?: Table;
 
   /**
    * The tbody element represents a block of rows that consist of a body of data for the parent table element, if the tbody element has a parent and it is a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/tbody)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/tbody)
    */
   tbody?: Tbody;
 
   /**
    * The td element represents a data cell in a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/td)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/td)
    */
   td?: Td;
 
   /**
    * The template element is used to declare fragments of HTML that can be cloned and inserted in the document by script.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/template)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template)
    */
   template?: GlobalAttributes;
 
@@ -947,7 +965,7 @@ export interface HTMLElements {
 
   /**
    * The textarea element represents a multiline plain text edit control for the element's raw value. The contents of the control represent the control's default value.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/textarea)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/textarea)
    */
   textarea?: Textarea;
 
@@ -959,43 +977,43 @@ export interface HTMLElements {
 
   /**
    * The tfoot element represents the block of rows that consist of the column summaries (footers) for the parent table element, if the tfoot element has a parent and it is a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/tfoot)
    */
   tfoot?: Tfoot;
 
   /**
    * The th element represents a header cell in a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/th)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/th)
    */
   th?: Th;
 
   /**
    * The thead element represents the block of rows that consist of the column labels (headers) for the parent table element, if the thead element has a parent and it is a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/thead)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/thead)
    */
   thead?: Thead;
 
   /**
    * The time element represents its contents, along with a machine-readable form of those contents in the datetime attribute. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as described below.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/time)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/time)
    */
   time?: Time;
 
   /**
    * The title element represents the document's title or name. Authors should use titles that identify their documents even when they are used out of context, for example in a user's history or bookmarks, or in search results. The document's title is often different from its first heading, since the first heading does not have to stand alone when taken out of context.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/title)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/title)
    */
   title?: GlobalAttributes;
 
   /**
    * The tr element represents a row of cells in a table.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/tr)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/tr)
    */
   tr?: Tr;
 
   /**
    * The track element allows authors to specify explicit external timed text tracks for media elements. It does not represent anything on its own.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/track)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/track)
    */
   track?: Track;
 
@@ -1007,13 +1025,13 @@ export interface HTMLElements {
 
   /**
    * The u element represents a span of text with an unarticulated, though explicitly rendered, non-textual annotation, such as labeling the text as being a proper name in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/u)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/u)
    */
   u?: GlobalAttributes;
 
   /**
    * The ul element represents a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/ul)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/ul)
    */
   ul?: Ul;
 
@@ -1025,13 +1043,13 @@ export interface HTMLElements {
 
   /**
    * The var element represents a variable. This could be an actual variable in a mathematical expression or programming context, an identifier representing a constant, a symbol identifying a physical quantity, a function parameter, or just be a term used as a placeholder in prose.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/var)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/var)
    */
   var?: GlobalAttributes;
 
   /**
    * A video element is used for playing videos or movies, and audio files with captions.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/video)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/video)
    */
   video?: Video;
 
@@ -1043,7 +1061,7 @@ export interface HTMLElements {
 
   /**
    * The wbr element represents a line break opportunity.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/wbr)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/wbr)
    */
   wbr?: GlobalAttributes;
 }
@@ -1060,7 +1078,7 @@ interface GlobalAttributes {
 
   /**
    * Provides a hint for generating a keyboard shortcut for the current element. This attribute consists of a space-separated list of characters. The browser should use the first one that exists on the computer keyboard layout.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/accesskey)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/accesskey)
    */
   accesskey?: string;
 
@@ -1376,13 +1394,25 @@ interface GlobalAttributes {
    * *   `on` or `sentences`, the first letter of each sentence defaults to a capital letter; all other letters default to lowercase
    * *   `words`, the first letter of each word defaults to a capital letter; all other letters default to lowercase
    * *   `characters`, all letters should default to uppercase
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autocapitalize)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/autocapitalize)
    */
   autocapitalize?: string;
 
   /**
+   * Controls whether autocorrection of editable text is enabled for spelling and/or punctuation errors.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/autocorrect)
+   */
+  autocorrect?: "on" | "off";
+
+  /**
+   * Indicates that an element should be focused on page load, or when the [`<dialog>`](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) that it is part of is displayed.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/autofocus)
+   */
+  autofocus?: string;
+
+  /**
    * A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the [class selectors](https://developer.mozilla.org/docs/Web/CSS/Class_selectors) or functions like the method [`Document.getElementsByClassName()`](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName "returns an array-like object of all child elements which have all of the given class names.").
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/class)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/class)
    */
   class?: string;
 
@@ -1391,7 +1421,7 @@ interface GlobalAttributes {
    *
    * *   `true` or the _empty string_, which indicates that the element must be editable;
    * *   `false`, which indicates that the element must not be editable.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/contenteditable)
    */
   contenteditable?: string;
 
@@ -1406,7 +1436,7 @@ interface GlobalAttributes {
    * *   `ltr`, which means _left to right_ and is to be used for languages that are written from the left to the right (like English);
    * *   `rtl`, which means _right to left_ and is to be used for languages that are written from the right to the left (like Arabic);
    * *   `auto`, which lets the user agent decide. It uses a basic algorithm as it parses the characters inside the element until it finds a character with a strong directionality, then it applies that directionality to the whole element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/dir)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/dir)
    */
   dir?: "ltr" | "rtl" | "auto";
 
@@ -1415,7 +1445,7 @@ interface GlobalAttributes {
    *
    * *   `true`, which indicates that the element may be dragged
    * *   `false`, which indicates that the element may not be dragged.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/draggable)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/draggable)
    */
   draggable?: "true" | "false";
 
@@ -1429,32 +1459,51 @@ interface GlobalAttributes {
   dropzone?: string;
 
   /**
+   * An enumerated attribute defining what action label (or icon) to present for the enter key on virtual keyboards.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/enterkeyhint)
+   */
+  enterkeyhint?:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
+
+  /**
    * Used to transitively export shadow parts from a nested shadow tree into a containing light tree.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/exportparts)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/exportparts)
    */
   exportparts?: string;
 
   /**
    * A Boolean attribute indicates that the element is not yet, or is no longer, _relevant_. For example, it can be used to hide elements of the page that can't be used until the login process has been completed. The browser won't render such elements. This attribute must not be used to hide content that could legitimately be shown.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/hidden)
    */
   hidden?: boolean;
 
   /**
    * Defines a unique identifier (ID) which must be unique in the whole document. Its purpose is to identify the element when linking (using a fragment identifier), scripting, or styling (with CSS).
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/id)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/id)
    */
   id?: string;
 
   /**
+   * Indicates that the element and all of its flat tree descendants become _inert_. Modal `<dialog>`s generated with [`showModal()`](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal) escape inertness, meaning that they don't inherit inertness from their ancestors, but can only be made inert by having the `inert` attribute explicitly set on themselves.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/inert)
+   */
+  inert?: string;
+
+  /**
    * Provides a hint to browsers as to the type of virtual keyboard configuration to use when editing this element or its contents. Used primarily on [`<input>`](https://developer.mozilla.org/docs/Web/HTML/Element/input "The HTML <input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent.") elements, but is usable on any element while in `[contenteditable](https://developer.mozilla.org/docs/Web/HTML/Global_attributes#attr-contenteditable)` mode.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/inputmode)
    */
   inputmode?: string;
 
   /**
    * Allows you to specify that a standard HTML element should behave like a registered custom built-in element (see [Using custom elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) for more details).
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/is)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/is)
    */
   is?: string;
 
@@ -1485,9 +1534,15 @@ interface GlobalAttributes {
 
   /**
    * Helps define the language of an element: the language that non-editable elements are in, or the language that editable elements should be written in by the user. The attribute contains one “language tag” (made of hyphen-separated “language subtags”) in the format defined in [_Tags for Identifying Languages (BCP47)_](https://www.ietf.org/rfc/bcp/bcp47.txt). [**xml:lang**](#attr-xml:lang) has priority over it.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/lang)
    */
   lang?: string;
+
+  /**
+   * Defines a cryptographic nonce ("number used once") which can be used by [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/Guides/CSP) to determine whether or not a given fetch will be allowed to proceed for a given element.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/nonce)
+   */
+  nonce?: string;
 
   /**
    * The loading of a resource has been aborted.
@@ -1822,9 +1877,15 @@ interface GlobalAttributes {
 
   /**
    * A space-separated list of the part names of the element. Part names allows CSS to select and style specific elements in a shadow tree via the [`::part`](https://developer.mozilla.org/docs/Web/CSS/::part "The ::part CSS pseudo-element represents any element within a shadow tree that has a matching part attribute.") pseudo-element.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/part)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/part)
    */
   part?: string;
+
+  /**
+   * Designates an element as a popover element.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/popover)
+   */
+  popover?: "auto" | "hint" | "manual";
 
   role?:
     | "alert"
@@ -1940,7 +2001,7 @@ interface GlobalAttributes {
 
   /**
    * Assigns a slot in a [shadow DOM](https://developer.mozilla.org/docs/Web/Web_Components/Shadow_DOM) shadow tree to an element: An element with a `slot` attribute is assigned to the slot created by the [`<slot>`](https://developer.mozilla.org/docs/Web/HTML/Element/slot "The HTML <slot> element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.") element whose `[name](https://developer.mozilla.org/docs/Web/HTML/Element/slot#attr-name)` attribute's value matches that `slot` attribute's value.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/slot)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/slot)
    */
   slot?: string;
 
@@ -1949,13 +2010,13 @@ interface GlobalAttributes {
    *
    * *   `true`, which indicates that the element should be, if possible, checked for spelling errors;
    * *   `false`, which indicates that the element should not be checked for spelling errors.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/spellcheck)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/spellcheck)
    */
   spellcheck?: "true" | "false";
 
   /**
    * Contains [CSS](https://developer.mozilla.org/docs/Web/CSS) styling declarations to be applied to the element. Note that it is recommended for styles to be defined in a separate file or files. This attribute and the [`<style>`](https://developer.mozilla.org/docs/Web/HTML/Element/style "The HTML <style> element contains style information for a document, or part of a document.") element have mainly the purpose of allowing for quick styling, for example for testing purposes.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/style)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/style)
    */
   style?: string | CSSProperties;
 
@@ -1971,13 +2032,13 @@ interface GlobalAttributes {
    * *   a _negative value_ means that the element should be focusable, but should not be reachable via sequential keyboard navigation;
    * *   `0` means that the element should be focusable and reachable via sequential keyboard navigation, but its relative order is defined by the platform convention;
    * *   a _positive value_ means that the element should be focusable and reachable via sequential keyboard navigation; the order in which the elements are focused is the increasing value of the [**tabindex**](#attr-tabindex). If several elements share the same tabindex, their relative order follows their relative positions in the document.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/tabindex)
    */
   tabindex?: number | string;
 
   /**
    * Contains a text representing advisory information related to the element it belongs to. Such information can typically, but not necessarily, be presented to the user as a tooltip.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/title)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/title)
    */
   title?: string;
 
@@ -1986,9 +2047,15 @@ interface GlobalAttributes {
    *
    * *   empty string and `yes`, which indicates that the element will be translated.
    * *   `no`, which indicates that the element will not be translated.
-   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/translate)
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/translate)
    */
   translate?: "yes" | "no";
+
+  /**
+   * When specified on an element that the element's content is editable (for example, it is an `<input>` or `<textarea>` element, or an element with the `contenteditable` attribute set), it controls the on-screen virtual keyboard behavior on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available.
+   * @see [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/virtualkeyboardpolicy)
+   */
+  virtualkeyboardpolicy?: "true" | "false";
 }
 
 interface Html extends GlobalAttributes {
@@ -2397,11 +2464,6 @@ interface Style extends GlobalAttributes {
    * This attribute defines which media the style should be applied to. Its value is a [media query](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries), which defaults to `all` if the attribute is missing.
    */
   media?: string;
-
-  /**
-   * A cryptographic nonce (number used once) used to allow inline styles in a [style-src Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src). The server must generate a unique nonce value each time it transmits a policy. It is critical to provide a nonce that cannot be guessed as bypassing a resource’s policy is otherwise trivial.
-   */
-  nonce?: string;
 
   scoped?: boolean;
 
@@ -2815,6 +2877,11 @@ interface Img extends GlobalAttributes {
    * Default mode, which indicates no preference for the decoding mode. The browser decides what is best for the user.
    */
   decoding?: "sync" | "async" | "auto";
+
+  /**
+   * Provides a hint of the relative priority to use when fetching the image.
+   */
+  fetchpriority?: "high" | "low" | "auto";
 
   /**
    * The intrinsic height of the image in pixels.
@@ -3854,8 +3921,6 @@ interface Input extends GlobalAttributes {
     | "username"
     | "work";
 
-  autofocus?: boolean;
-
   checked?: boolean;
 
   dirname?: string;
@@ -3896,6 +3961,10 @@ interface Input extends GlobalAttributes {
   pattern?: string;
 
   placeholder?: number | string;
+
+  popovertarget?: string;
+
+  popovertargetaction?: string;
 
   readonly?: boolean;
 
@@ -3942,11 +4011,6 @@ interface Button extends GlobalAttributes {
    * The use of this attribute on a [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button "The HTML <button> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.") is nonstandard and Firefox-specific. By default, unlike other browsers, [Firefox persists the dynamic disabled state](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) of a [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button "The HTML <button> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.") across page loads. Setting the value of this attribute to `off` (i.e. `autocomplete="off"`) disables this feature. See [bug 654072](https://bugzilla.mozilla.org/show_bug.cgi?id=654072 "if disabled state is changed with javascript, the normal state doesn't return after refreshing the page").
    */
   autocomplete?: string;
-
-  /**
-   * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it, for example by typing in a different control. Only one form-associated element in a document can have this attribute specified.
-   */
-  autofocus?: boolean;
 
   /**
    * This Boolean attribute indicates that the user cannot interact with the button. If this attribute is not specified, the button inherits its setting from the containing element, for example [`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset "The HTML <fieldset> element is used to group several controls as well as labels (<label>) within a web form."); if there is no containing element with the **disabled** attribute set, then the button is enabled.
@@ -4008,6 +4072,16 @@ interface Button extends GlobalAttributes {
    * The name of the button, which is submitted with the form data.
    */
   name?: string;
+
+  /**
+   * Turns the button into a popover control button; takes the ID of the popover element to control as its value.
+   */
+  popovertarget?: string;
+
+  /**
+   * Specifies the action to be performed on a popover element being controlled by the button.
+   */
+  popovertargetaction?: string;
 
   /**
    * The type of the button. Possible values are:
@@ -4091,11 +4165,6 @@ interface Select extends GlobalAttributes {
     | "url"
     | "username"
     | "work";
-
-  /**
-   * This Boolean attribute lets you specify that a form control should have input focus when the page loads. Only one form element in a document can have the `autofocus` attribute.
-   */
-  autofocus?: boolean;
 
   /**
    * This Boolean attribute indicates that the user cannot interact with the control. If this attribute is not specified, the control inherits its setting from the containing element, for example `fieldset`; if there is no containing element with the `disabled` attribute set, then the control is enabled.
@@ -4236,11 +4305,6 @@ interface Textarea extends GlobalAttributes {
     | "url"
     | "username"
     | "work";
-
-  /**
-   * This Boolean attribute lets you specify that a form control should have input focus when the page loads. Only one form-associated element in a document can have this attribute specified.
-   */
-  autofocus?: boolean;
 
   /**
    * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer. If it is not specified, the default value is `20`.
@@ -4452,11 +4516,6 @@ interface Script extends GlobalAttributes {
   nomodule?: string;
 
   /**
-   * A cryptographic nonce (number used once) to list the allowed inline scripts in a [script-src Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). The server must generate a unique nonce value each time it transmits a policy. It is critical to provide a nonce that cannot be guessed as bypassing a resource's policy is otherwise trivial.
-   */
-  nonce?: string;
-
-  /**
    * Indicates which [referrer](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) to send when fetching the script, or resources fetched by the script:
    *
    * *   `no-referrer`: The [`Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer "The Referer request header contains the address of the previous web page from which a link to the currently requested page was followed. The Referer header allows servers to identify where people are visiting them from and may use that data for analytics, logging, or optimized caching, for example.") header will not be sent.
@@ -4526,6 +4585,14 @@ interface Data extends GlobalAttributes {
    * This attribute specifies the machine-readable translation of the content of the element.
    */
   value?: number | string;
+}
+
+interface Fencedframe extends GlobalAttributes {
+  allow?: string;
+
+  height?: number | string;
+
+  width?: number | string;
 }
 
 interface Animate extends GlobalAttributes {

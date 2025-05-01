@@ -85,6 +85,21 @@ export interface CSSProperties {
     | string;
 
   /**
+   * The alignment-baseline CSS property specifies the specific baseline used to align the box's text and inline-level contents. Baseline alignment is the relationship among the baselines of multiple alignment subjects within an alignment context. When performing baseline alignment, the alignment-baseline property value specifies which baseline of the box is aligned to the corresponding baseline of its alignment context.
+   * Syntax: baseline | alphabetic | ideographic | middle | central | mathematical | text-before-edge | text-after-edge
+   * @see https://developer.mozilla.org/docs/Web/CSS/alignment-baseline
+   */
+  "alignment-baseline"?:
+    | "baseline"
+    | "alphabetic"
+    | "ideographic"
+    | "middle"
+    | "central"
+    | "mathematical"
+    | "text-before-edge"
+    | "text-after-edge";
+
+  /**
    * Shorthand that resets all properties except 'direction' and 'unicode-bidi'.
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
@@ -331,6 +346,8 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/background-size
    */
   "background-size"?: "auto" | "contain" | "cover" | string | 0;
+
+  "baseline-shift"?: string;
 
   /**
    * IE only. Used to extend behaviors of the browser.
@@ -1047,10 +1064,9 @@ export interface CSSProperties {
 
   /**
    * The container-type CSS property is used to define the type of containment used in a container query.
-   * Syntax: normal | size | inline-size
    * @see https://developer.mozilla.org/docs/Web/CSS/container-type
    */
-  "container-type"?: "normal" | "size" | "inline-size";
+  "container-type"?: string;
 
   /**
    * Determines which page-based occurrence of a given element is applied to a counter or string value.
@@ -1443,7 +1459,7 @@ export interface CSSProperties {
 
   /**
    * Indicates the desired height of glyphs from the font. For scalable fonts, the font-size is a scale factor applied to the EM unit of the font. (Note that certain glyphs may bleed outside their EM box.) For non-scalable fonts, the font-size is converted into absolute units and matched against the declared font-size of the font, using the same absolute coordinate space for both of the matched values.
-   * Syntax: <absolute-size> | <relative-size> | <length-percentage>
+   * Syntax: <absolute-size> | <relative-size> | <length-percentage [0,∞]> | math
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size
    */
   "font-size"?:
@@ -2521,6 +2537,8 @@ export interface CSSProperties {
    */
   "object-position"?: string;
 
+  "object-view-box"?: string;
+
   /**
    * The offset CSS property is a shorthand property for animating an element along a defined path.
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -3038,6 +3056,11 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
   "scroll-behavior"?: "auto" | "smooth";
+
+  /**
+   * Syntax: none | nearest
+   */
+  "scroll-initial-target"?: "none" | "nearest";
 
   /**
    * The scroll-margin property is a shorthand property which sets all of the scroll-margin longhands, assigning values much like the margin property does for the margin-* longhands.

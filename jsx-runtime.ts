@@ -95,12 +95,12 @@ export async function jsxTemplate(
 
 /** Required for "precompile" mode: render content */
 export async function jsxEscape(content: Content): Promise<string> {
-  if (Array.isArray(content)) {
-    return (await Promise.all(content.map(jsxEscape))).join("");
-  }
-
   if (isEmpty(content)) {
     return "";
+  }
+
+  if (Array.isArray(content)) {
+    return (await Promise.all(content.map(jsxEscape))).join("");
   }
 
   switch (typeof content) {
@@ -136,6 +136,10 @@ export async function renderComponent(
 ): Promise<string> {
   if (Array.isArray(component)) {
     return (await Promise.all(component.map(renderComponent))).join("");
+  }
+
+  if (!isComponent(component)) {
+    return await jsxEscape(component);
   }
 
   const { type, props } = component;
