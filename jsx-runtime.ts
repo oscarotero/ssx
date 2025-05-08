@@ -1,5 +1,5 @@
-import { HTMLElements } from "./html.ts";
-import { CSSProperties } from "./css.ts";
+import type { HTMLElements } from "./html.ts";
+import type { CSSProperties } from "./css.ts";
 
 interface RawHtml {
   __html?: string;
