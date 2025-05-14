@@ -42,6 +42,9 @@ In your `deno.json` file:
 }
 ```
 
+Alternatively, you can use
+[JsDelivr as CDN](https://cdn.jsdelivr.net/gh/oscarotero/ssx/).
+
 ## Using NPM specifier
 
 SSX is also
