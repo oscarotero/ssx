@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [0.1.10] - Unreleased
+### Added
+- New `await <Component />.toString()` method to render the component.
+- Example for Node.js/Bun
+
 ### Fixed
 - Import the types with `import type`.
 

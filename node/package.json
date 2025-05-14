@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node --import tsx index.tsx"
+  },
+  "dependencies": {
+    "@lumeland/ssx": "^0.1.9",
+    "tsx": "^4.19.4"
+  }
+}

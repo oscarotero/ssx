@@ -50,6 +50,11 @@ const proto = Object.create(null, {
     value: true,
     enumerable: false,
   },
+  toString: {
+    value: function () {
+      return renderComponent(this);
+    },
+  },
 });
 
 /** The jsx function to create elements */
