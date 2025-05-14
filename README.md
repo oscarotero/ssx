@@ -33,7 +33,7 @@ In your `deno.json` file:
 ```json
 {
   "compilerOptions": {
-    "jsx": "precompile",
+    "jsx": "react-jsx",
     "jsxImportSource": "ssx"
   },
   "imports": {
@@ -50,7 +50,7 @@ SSX is also
 ```json
 {
   "compilerOptions": {
-    "jsx": "precompile",
+    "jsx": "react-jsx",
     "jsxImportSource": "npm:@lumeland/ssx"
   }
 }
@@ -100,9 +100,9 @@ console.log(await Main());
 
 ### Adding Doctype:
 
-Any children content with the type `{ __html: string }` is considered raw HTML
-code that won't be escaped. You can use it to add the `<!doctype html>`
-declaration (something not possible in other JSX libraries):
+Any child with the shape `{ __html: string }` is treated as raw HTML and will
+not be escaped. This allows you to insert the `<!doctype html>` declaration
+directly (something not possible in other JSX libraries):
 
 ```html
 {{ __html: "<!DOCTYPE html>" }}
