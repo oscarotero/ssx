@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [0.1.10] - Unreleased
+## [0.1.10] - 2025-05-14
 ### Added
 - New `await <Component />.toString()` method to render the component.
 - Example for Node.js/Bun
@@ -72,7 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [0.1.0] - 2024-07-20
 First version
 
-[0.1.10]: https://github.com/oscarotero/ssx/compare/v0.1.9...HEAD
+[0.1.10]: https://github.com/oscarotero/ssx/compare/v0.1.9...v0.1.10
 [0.1.9]: https://github.com/oscarotero/ssx/compare/v0.1.8...v0.1.9
 [0.1.8]: https://github.com/oscarotero/ssx/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/oscarotero/ssx/compare/v0.1.6...v0.1.7
