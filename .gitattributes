@@ -1,0 +1,6 @@
+/_scripts        export-ignore
+/node            export-ignore
+/benchmark       export-ignore
+/deno.json       export-ignore
+/.gitignore      export-ignore
+/.gitattributes  export-ignore
