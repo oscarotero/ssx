@@ -1,13 +1,13 @@
 import type { HTMLElements } from "./html.ts";
 import type { CSSProperties } from "./css.ts";
 
-interface RawHtml {
+export interface RawHtml {
   __html?: string;
 }
 
-type Props = Record<string, unknown>;
+export type Props = Record<string, unknown>;
 
-type Content =
+export type Content =
   | string
   | number
   | boolean
@@ -17,7 +17,7 @@ type Content =
 
 const ssxElement = Symbol.for("ssx.element");
 
-interface Component {
+export interface Component {
   // deno-lint-ignore no-explicit-any
   type: string | ((props: Props) => any);
   props: Props;
