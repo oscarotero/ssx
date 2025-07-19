@@ -2063,7 +2063,6 @@ export interface CSSProperties {
 
   /**
    * The line-height-step CSS property defines the step units for line box heights. When the step unit is positive, line box heights are rounded up to the closest multiple of the unit. Negative values are invalid.
-   * @see https://developer.mozilla.org/docs/Web/CSS/line-height-step
    */
   "line-height-step"?: string;
 
@@ -3880,6 +3879,10 @@ export interface CSSProperties {
    */
   "view-timeline-name"?: string;
 
+  /**
+   * The view-transition-class CSS property provides the selected elements with an identifying class (a custom-ident), providing an additional method of styling the view transitions for those elements.
+   * @see https://developer.mozilla.org/docs/Web/CSS/view-transition-class
+   */
   "view-transition-class"?: string;
 
   /**

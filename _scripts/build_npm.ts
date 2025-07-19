@@ -1,6 +1,10 @@
-import { emptyDir } from "jsr:@std/fs@1.0.8/empty-dir";
+try {
+  Deno.removeSync("./_npm", { recursive: true });
+} catch {
+  // Ignore if the directory does not exist
+}
 
-await emptyDir("./_npm");
+Deno.mkdirSync("./_npm");
 
 const version = Deno.args[0];
 

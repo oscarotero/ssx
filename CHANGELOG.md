@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Expose `JSX.Component`.
 
 ### Fixed
-- Changed the `renderComponent` signature to accept an `unknown` type as first argument [#2].
+- Updated types for HTML and CSS.
+- Changed the `renderComponent` signature to use the `unknown` type as first argument [#2].
 
 ## [0.1.10] - 2025-05-14
 ### Added
