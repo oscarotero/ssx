@@ -137,14 +137,14 @@ function isComponent(value: any): value is Component {
 }
 
 export async function renderComponent(
-  component: Component | Component[],
+  component: unknown | unknown[],
 ): Promise<string> {
   if (Array.isArray(component)) {
     return (await Promise.all(component.map(renderComponent))).join("");
   }
 
   if (!isComponent(component)) {
-    return await jsxEscape(component);
+    return await jsxEscape(component as Content);
   }
 
   const { type, props } = component;
@@ -220,9 +220,12 @@ export function jsxAttr(name: string, value: unknown): string {
 /** Make JSX global */
 declare global {
   export namespace JSX {
+    export type { Component };
     export type Children =
       | HTMLElements
       | RawHtml
+      | Content
+      | Component
       | string
       | number
       | boolean
