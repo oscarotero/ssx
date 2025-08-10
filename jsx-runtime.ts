@@ -185,6 +185,11 @@ export async function renderComponent(
     return `<${attrs.join(" ")}>${content}</${type}>`;
   }
 
+  if (typeof type !== "function") {
+    throw new Error(
+      `[SSX] Invalid component type: ${typeof type}. Expected a string or a function.`,
+    );
+  }
   const comp = await type(props);
 
   return isEmpty(comp)
@@ -202,10 +207,6 @@ export function jsxAttr(name: string, value: unknown): string {
     value = renderStyles(value as CSSProperties);
   }
 
-  if (typeof value === "string") {
-    return `${name}="${value.replaceAll('"', "&quot;")}"`;
-  }
-
   if (isEmpty(value)) {
     return "";
   }
@@ -214,7 +215,18 @@ export function jsxAttr(name: string, value: unknown): string {
     return name;
   }
 
-  return `${name}="${value}"`;
+  if (typeof value === "string") {
+    return `${name}="${value.replaceAll('"', "&quot;")}"`;
+  }
+
+  if (typeof value === "number") {
+    return `${name}="${value}"`;
+  }
+
+  console.warn(
+    `[SSX] Unsupported value for attribute "${name}": (${typeof value}). Pass a string, number, or boolean.`,
+  );
+  return "";
 }
 
 /** Make JSX global */
@@ -245,6 +257,6 @@ function renderStyles(properties: CSSProperties) {
     .join("");
 }
 
-function isEmpty(value: unknown): boolean {
+function isEmpty(value: unknown): value is undefined | null | false {
   return value == null || value === undefined || value === false;
 }

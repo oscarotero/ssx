@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.12] - 2025-08-10
+### Fixed
+- Better errors on invalid attributes or component type.
+
 ## [0.1.11] - 2025-07-19
 ### Added
 - Expose `JSX.Component`.
@@ -82,6 +86,7 @@ First version
 
 [#2]: https://github.com/oscarotero/ssx/issues/2
 
+[0.1.12]: https://github.com/oscarotero/ssx/compare/v0.1.11...v0.1.12
 [0.1.11]: https://github.com/oscarotero/ssx/compare/v0.1.10...v0.1.11
 [0.1.10]: https://github.com/oscarotero/ssx/compare/v0.1.9...v0.1.10
 [0.1.9]: https://github.com/oscarotero/ssx/compare/v0.1.8...v0.1.9
