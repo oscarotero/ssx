@@ -57,6 +57,17 @@ function createProperty(attr: any): Props | undefined {
         value += " | 0";
       }
     }
+    if (attr.baseline) {
+      const status = capitalize(attr.baseline.status);
+      if (status === "False") {
+        description +=
+          `\nBaseline: ${status} (Not supported in all major browser)`;
+      } else {
+        const date = attr.baseline.baseline_low_date ||
+          attr.baseline.baseline_high_date;
+        description += `\nBaseline: ${status} (Supported since ${date})`;
+      }
+    }
   }
 
   return {
@@ -76,3 +87,7 @@ CSSProperties.properties.push({
 const code = renderInterface(CSSProperties);
 
 Deno.writeTextFileSync("css.ts", code);
+
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

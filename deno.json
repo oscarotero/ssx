@@ -18,5 +18,10 @@
   "exclude": [
     "CHANGELOG.md",
     "tests/expected.html"
-  ]
+  ],
+  "lint": {
+    "rules": {
+      "exclude": ["no-import-prefix"]
+    }
+  }
 }

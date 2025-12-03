@@ -4461,6 +4461,15 @@ interface Fieldset extends GlobalAttributes {
 
 interface Details extends GlobalAttributes {
   /**
+   * This attribute enables multiple `<details>` elements to be connected, with only one open at a time. This allows developers to easily create UI features such as accordions without scripting.
+   *
+   * The `name` attribute specifies a group name — give multiple `<details>` elements the same `name` value to group them. Only one of the grouped `<details>` elements can be open at a time — opening one will cause another to close. If multiple grouped `<details>` elements are given the `open` attribute, only the first one in the source order will be rendered open.
+   *
+   * **Note**: `<details>` elements don't have to be adjacent to one another in the source to be part of the same group.
+   */
+  name?: string;
+
+  /**
    * This Boolean attribute indicates whether or not the details — that is, the contents of the `<details>` element — are currently visible. The default, `false`, means the details are not visible.
    */
   open?: boolean;
