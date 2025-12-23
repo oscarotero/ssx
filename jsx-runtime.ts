@@ -165,11 +165,11 @@ export async function renderComponent(
         const [key, val] of Object.entries(props)
       ) {
         if (key === "dangerouslySetInnerHTML") {
-          content = (val as RawHtml).__html ?? "";
+          content += (val as RawHtml).__html ?? "";
           continue;
         }
         if (key === "children") {
-          content = await jsxEscape(val as Content);
+          content += await jsxEscape(val as Content);
           continue;
         }
         attrs.push(jsxAttr(key, val));

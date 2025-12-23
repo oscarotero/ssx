@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.14] - 2025-12-23
+### Fixed
+- Element content can be overriden in precompile mode.
+
 ## [0.1.13] - 2025-12-03
 ### Added
 - Baseline info to CSS properties.
@@ -93,6 +97,7 @@ First version
 
 [#2]: https://github.com/oscarotero/ssx/issues/2
 
+[0.1.14]: https://github.com/oscarotero/ssx/compare/v0.1.13...v0.1.14
 [0.1.13]: https://github.com/oscarotero/ssx/compare/v0.1.12...v0.1.13
 [0.1.12]: https://github.com/oscarotero/ssx/compare/v0.1.11...v0.1.12
 [0.1.11]: https://github.com/oscarotero/ssx/compare/v0.1.10...v0.1.11

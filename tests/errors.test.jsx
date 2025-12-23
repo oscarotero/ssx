@@ -20,3 +20,18 @@ Deno.test("Weird components", async () => {
   const p = <Name>Not valid</Name>;
   await assertRejects(async () => await p.toString());
 });
+
+Deno.test("inner HTML", async () => {
+  const title = (
+    <h1
+      dangerouslySetInnerHTML={{
+        __html: "<strong>Hello world</strong>",
+      }}
+    >
+    </h1>
+  );
+  assertEquals(
+    await title.toString(),
+    `<h1><strong>Hello world</strong></h1>`,
+  );
+});
