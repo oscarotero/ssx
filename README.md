@@ -37,7 +37,7 @@ In your `deno.json` file:
     "jsxImportSource": "ssx"
   },
   "imports": {
-    "ssx/jsx-runtime": "https://deno.land/x/ssx/jsx-runtime.ts"
+    "ssx/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
   }
 }
 ```
@@ -67,6 +67,8 @@ example setup using this package in a Node environment.
 ## Example:
 
 ```jsx
+import { renderComponent } from "ssx/jsx-runtime";
+
 // Main component
 function Main() {
   return (
@@ -98,7 +100,7 @@ async function Header({ children }: { children: JSX.Children }) {
 }
 
 // String with the HTML code
-console.log(await Main());
+console.log(await renderComponent(<Main />);
 ```
 
 ### Adding Doctype:
