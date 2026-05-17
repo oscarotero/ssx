@@ -179,10 +179,10 @@ export async function renderComponent(
       if (content) {
         throw new Error(`Void element "${type}" cannot have children`);
       }
-      return `<${attrs.join(" ")}>`;
+      return `<${attrs.join(" ").trim()}>`;
     }
 
-    return `<${attrs.join(" ")}>${content}</${type}>`;
+    return `<${attrs.join(" ").trim()}>${content}</${type}>`;
   }
 
   if (typeof type !== "function") {

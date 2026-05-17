@@ -4,13 +4,14 @@ function ComponentA() {
   return <div>Hello</div>;
 }
 
-function ComponentB() {
+function ComponentB({ title }) {
   return (
-    <span>
+    <span title={title}>
       <ComponentA />
     </span>
   );
 }
 
-const rendered = await renderComponent(<ComponentB />);
-console.log(rendered);
+const rendered = <ComponentB />;
+console.log(await rendered.toString());
+console.log(await (<ComponentB title="foo" />).toString());
