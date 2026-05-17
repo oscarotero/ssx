@@ -11,7 +11,7 @@ Deno.test("Skip invalid attributes", async () => {
   const p = <p {...props}>Not valid</p>;
   assertEquals(
     await p.toString(),
-    `<p id="valid" tabindex="1"   >Not valid</p>`,
+    `<p id="valid" tabindex="1">Not valid</p>`,
   );
 });
 
