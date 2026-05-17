@@ -12,6 +12,12 @@ function ComponentB({ title }) {
   );
 }
 
+// Render with renderComponent helper
+console.log(await renderComponent(<ComponentB />));
+
+// Render with .toString() method
 const rendered = <ComponentB />;
 console.log(await rendered.toString());
+
+// .toString() in a single line
 console.log(await (<ComponentB title="foo" />).toString());
