@@ -122,6 +122,7 @@ export interface CSSProperties {
 
   /**
    * This property scopes the specified anchor names, and lookups for these anchor names, to this element’s subtree
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/anchor-scope
    */
   "anchor-scope"?: string;
 
@@ -235,6 +236,8 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timing-function
    */
   "animation-timing-function"?: string;
+
+  "animation-trigger"?: string;
 
   /**
    * Changes the appearance of buttons and other controls to resemble native controls.
@@ -367,8 +370,16 @@ export interface CSSProperties {
 
   /**
    * Allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element. The shifted object might be a sub- or superscript.
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-shift
    */
   "baseline-shift"?: string;
+
+  /**
+   * Syntax: auto | first | last
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source
+   */
+  "baseline-source"?: "auto" | "first" | "last";
 
   /**
    * IE only. Used to extend behaviors of the browser.
@@ -557,7 +568,7 @@ export interface CSSProperties {
 
   /**
    * Specifies inward offsets from the top, right, bottom, and left edges of the image, dividing it into nine regions: four corners, four edges and a middle.
-   * Syntax: [ <number [0,∞]> | <percentage [0,∞]> ]{1,4}  && fill?
+   * Syntax: [ <number [0,∞]> | <percentage [0,∞]> ]{1,4} && fill?
    * Baseline: High (Supported since 2015-07-29)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-slice
    */
@@ -922,6 +933,13 @@ export interface CSSProperties {
   caret?: string;
 
   /**
+   * Syntax: auto | manual
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-animation
+   */
+  "caret-animation"?: "auto" | "manual";
+
+  /**
    * Controls the color of the text insertion indicator.
    * Syntax: auto | <color>
    * Baseline: High (Supported since 2020-01-15)
@@ -1013,6 +1031,8 @@ export interface CSSProperties {
    */
   "column-gap"?: "normal" | string | 0;
 
+  "column-height"?: string;
+
   /**
    * Shorthand for setting 'column-rule-width', 'column-rule-style', and 'column-rule-color' at the same place in the style sheet. Omitted values are set to their initial values.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule
@@ -1047,15 +1067,21 @@ export interface CSSProperties {
 
   /**
    * Describes the width of columns in multicol elements.
-   * Syntax: <length> | auto
+   * Syntax: auto | <length [0,∞]>
    * Baseline: High (Supported since 2016-11-15)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-width
    */
   "column-width"?: "auto" | string | 0;
 
   /**
+   * Syntax: auto | nowrap | wrap
+   * Baseline: False (Not supported in all major browser)
+   */
+  "column-wrap"?: "auto" | "nowrap" | "wrap";
+
+  /**
    * A shorthand property which sets both 'column-width' and 'column-count'.
-   * Syntax: <'column-width'> || <'column-count'>
+   * Syntax: [ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?
    * Baseline: High (Supported since 2017-03-07)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/columns
    */
@@ -1146,6 +1172,91 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/content-visibility
    */
   "content-visibility"?: "visible" | "auto" | "hidden";
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape
+   */
+  "corner-block-end-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-start-shape
+   */
+  "corner-block-start-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-left-shape
+   */
+  "corner-bottom-left-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-right-shape
+   */
+  "corner-bottom-right-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape
+   */
+  "corner-bottom-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-end-shape
+   */
+  "corner-end-end-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-start-shape
+   */
+  "corner-end-start-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-end-shape
+   */
+  "corner-inline-end-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-start-shape
+   */
+  "corner-inline-start-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape
+   */
+  "corner-left-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-right-shape
+   */
+  "corner-right-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-shape
+   */
+  "corner-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-end-shape
+   */
+  "corner-start-end-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-start-shape
+   */
+  "corner-start-start-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-left-shape
+   */
+  "corner-top-left-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-right-shape
+   */
+  "corner-top-right-shape"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape
+   */
+  "corner-top-shape"?: string;
 
   /**
    * Manipulate the value of existing counters.
@@ -1321,6 +1432,11 @@ export interface CSSProperties {
     | "mathematical"
     | "hanging"
     | "text-top";
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dynamic-range-limit
+   */
+  "dynamic-range-limit"?: string;
 
   /**
    * In the separated borders model, this property controls the rendering of borders and backgrounds around cells that have no visible content.
@@ -1712,7 +1828,7 @@ export interface CSSProperties {
   /**
    * Specifies the vertical position
    * Syntax: normal | sub | super
-   * Baseline: False (Not supported in all major browser)
+   * Baseline: Low (Supported since 2023-09-15)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-position
    */
   "font-variant-position"?: "normal" | "sub" | "super";
@@ -2044,6 +2160,28 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-inline-start
    */
   "inset-inline-start"?: string;
+
+  /**
+   * Syntax: auto | inert
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interactivity
+   */
+  interactivity?: "auto" | "inert";
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay
+   */
+  "interest-delay"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end
+   */
+  "interest-delay-end"?: string;
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-start
+   */
+  "interest-delay-start"?: string;
 
   /**
    * The interpolate-size CSS property allows you to enable animations and transitions between a <length-percentage> value and an intrinsic size value such as auto, fit-content, or max-content.
@@ -2509,7 +2647,7 @@ export interface CSSProperties {
   /**
    * Used for positioning superscript during the layout of MathML scripted elements.
    * Syntax: normal | compact
-   * Baseline: False (Not supported in all major browser)
+   * Baseline: Low (Supported since 2025-12-12)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/math-shift
    */
   "math-shift"?: "normal" | "compact";
@@ -3153,6 +3291,25 @@ export interface CSSProperties {
   r?: string;
 
   /**
+   * Syntax: normal | source-order | flex-visual | flex-flow | grid-rows | grid-columns | grid-order
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-flow
+   */
+  "reading-flow"?:
+    | "normal"
+    | "source-order"
+    | "flex-visual"
+    | "flex-flow"
+    | "grid-rows"
+    | "grid-columns"
+    | "grid-order";
+
+  /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-order
+   */
+  "reading-order"?: string;
+
+  /**
    * Specifies whether or not an element is resizable by the user, and if so, along which axis/axes.
    * Syntax: none | both | horizontal | vertical | block | inline
    * Baseline: False (Not supported in all major browser)
@@ -3324,6 +3481,13 @@ export interface CSSProperties {
   "scroll-margin-top"?: string;
 
   /**
+   * Syntax: none | before | after
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-marker-group
+   */
+  "scroll-marker-group"?: "none" | "before" | "after";
+
+  /**
    * The scroll-padding property is a shorthand property which sets all of the scroll-padding longhands, assigning values much like the padding property does for the padding-* longhands.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding
    */
@@ -3449,6 +3613,13 @@ export interface CSSProperties {
    * Syntax: none | mandatory | proximity
    */
   "scroll-snap-type-y"?: "none" | "mandatory" | "proximity";
+
+  /**
+   * Syntax: none | auto
+   * Baseline: False (Not supported in all major browser)
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-target-group
+   */
+  "scroll-target-group"?: "none" | "auto";
 
   /**
    * Defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
@@ -3726,6 +3897,11 @@ export interface CSSProperties {
   "text-decoration-color"?: string;
 
   /**
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset
+   */
+  "text-decoration-inset"?: string;
+
+  /**
    * Specifies what line decorations, if any, are added to the element.
    * Syntax: none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error
    * Baseline: High (Supported since 2020-01-15)
@@ -3913,6 +4089,24 @@ export interface CSSProperties {
    */
   "timeline-scope"?: string;
 
+  "timeline-trigger"?: string;
+
+  "timeline-trigger-exit-range"?: string;
+
+  "timeline-trigger-exit-range-end"?: string;
+
+  "timeline-trigger-exit-range-start"?: string;
+
+  "timeline-trigger-name"?: string;
+
+  "timeline-trigger-range"?: string;
+
+  "timeline-trigger-range-end"?: string;
+
+  "timeline-trigger-range-start"?: string;
+
+  "timeline-trigger-source"?: string;
+
   /**
    * Specifies how far an absolutely positioned box's top margin edge is offset below the top edge of the box's 'containing block'.
    * Syntax: auto | <length-percentage> | <anchor()> | <anchor-size()>
@@ -4041,6 +4235,8 @@ export interface CSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/translate
    */
   translate?: string;
+
+  "trigger-scope"?: string;
 
   /**
    * The level of embedding with respect to the bidirectional algorithm.

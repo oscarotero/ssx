@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [0.1.15] - Unreleased
 ### Fixed
+- Updated CSS types.
 - Removed extra space for empty attributes:
   ```tsx
   <span title={undefined}/>
