@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+### Changed
+- BREAKING: the `JSX` namespace is exported by `ssx/jsx-runtime` instead of
+  being declared in the global scope. Components using `JSX.Children` or
+  `JSX.Component` must import the type:
+  ```tsx
+  import type { JSX } from "ssx/jsx-runtime";
+  ```
+  JSX syntax itself (attribute checking, intrinsic elements) keeps working
+  without any import. This requires TypeScript 5.1 or later.
+- `Fragment` has an explicit return type.
+
 ## [0.1.15] - 2026-05-17
 ### Fixed
 - Updated CSS types.
@@ -110,6 +122,7 @@ First version
 
 [#2]: https://github.com/oscarotero/ssx/issues/2
 
+[unreleased]: https://github.com/oscarotero/ssx/compare/v0.1.15...HEAD
 [0.1.15]: https://github.com/oscarotero/ssx/compare/v0.1.14...v0.1.15
 [0.1.14]: https://github.com/oscarotero/ssx/compare/v0.1.13...v0.1.14
 [0.1.13]: https://github.com/oscarotero/ssx/compare/v0.1.12...v0.1.13

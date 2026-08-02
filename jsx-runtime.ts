@@ -72,7 +72,7 @@ export function jsx(
 export { jsx as jsxs };
 
 /** Fragment component to group multiple elements */
-export function Fragment(props: { children: unknown }) {
+export function Fragment(props: { children: unknown }): unknown {
   return props.children;
 }
 
@@ -229,24 +229,29 @@ export function jsxAttr(name: string, value: unknown): string {
   return "";
 }
 
-/** Make JSX global */
-declare global {
-  export namespace JSX {
-    export type { Component };
-    export type Children =
-      | HTMLElements
-      | RawHtml
-      | Content
-      | Component
-      | string
-      | number
-      | boolean
-      | null
-      | Children[];
-    export interface IntrinsicElements extends HTMLElements {}
-    export interface ElementChildrenAttribute {
-      children: Children;
-    }
+type SsxComponent = Component;
+
+/**
+ * The JSX namespace, used by TypeScript to type check the JSX syntax.
+ * It's exported (instead of declared globally) so it doesn't modify the global
+ * types of the projects using this library.
+ */
+// deno-lint-ignore no-namespace
+export namespace JSX {
+  export type Component = SsxComponent;
+  export type Children =
+    | HTMLElements
+    | RawHtml
+    | Content
+    | Component
+    | string
+    | number
+    | boolean
+    | null
+    | Children[];
+  export interface IntrinsicElements extends HTMLElements {}
+  export interface ElementChildrenAttribute {
+    children: Children;
   }
 }
 

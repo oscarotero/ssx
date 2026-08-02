@@ -1,3 +1,5 @@
+import type { JSX } from "ssx/jsx-runtime";
+
 export default function Main() {
   return (
     <>

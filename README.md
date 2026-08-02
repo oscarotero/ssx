@@ -68,6 +68,7 @@ example setup using this package in a Node environment.
 
 ```jsx
 import { renderComponent } from "ssx/jsx-runtime";
+import type { JSX } from "ssx/jsx-runtime";
 
 // Main component
 function Main() {
