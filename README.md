@@ -37,7 +37,7 @@ In your `deno.json` file:
     "jsxImportSource": "ssx"
   },
   "imports": {
-    "ssx/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
+    "ssx/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts"
   }
 }
 ```
@@ -73,7 +73,7 @@ import { renderComponent } from "ssx/jsx-runtime";
 function Main() {
   return (
     <div id="main">
-      <Header>
+      <Header name="hello">
         <p>Welcome to SSX</p>
         {{ __html: "Raw <b>HTML</b> code" }}
       </Header>
@@ -82,7 +82,7 @@ function Main() {
 }
 
 // Async component
-async function Header({ children }: { children: JSX.Children }) {
+async function Header({ children, name }: { children: JSX.Children, name: string }) {
   const res = await fetch(
     `https://api.dictionaryapi.dev/api/v2/entries/en/${name}`,
   );
