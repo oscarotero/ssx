@@ -5,6 +5,7 @@
   },
   "lock": false,
   "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.19",
     "ssx/jsx-runtime": "./jsx-runtime.ts"
   },
   "tasks": {
