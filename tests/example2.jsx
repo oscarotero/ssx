@@ -21,7 +21,7 @@ export default function Main() {
       {"\n"}
       <_components.p>
         {"This is a markdown file with the title "}
-        <_components.strong>{"title"}</_components.strong>
+        <_components.strong>title</_components.strong>
         {"."}
       </_components.p>
       {"\n"}
