@@ -32,13 +32,13 @@ In your `deno.json` file:
 
 ```json
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "ssx"
-  },
-  "imports": {
-    "ssx/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
-  }
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "ssx"
+    },
+    "imports": {
+        "ssx/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
+    }
 }
 ```
 
@@ -52,10 +52,10 @@ SSX is also
 
 ```json
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "npm:@lumeland/ssx"
-  }
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "npm:@lumeland/ssx"
+    }
 }
 ```
 
