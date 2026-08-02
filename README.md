@@ -54,7 +54,10 @@ SSX is also
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "npm:@lumeland/ssx"
+    "jsxImportSource": "ssx"
+  },
+  "imports": {
+    "ssx": "npm:@lumeland/ssx@0.1.15"
   }
 }
 ```
